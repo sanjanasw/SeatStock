@@ -1,3 +1,4 @@
+<?php include "ConDB.php" ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,18 +30,18 @@
             <div class="card card-4">
                 <div class="card-body">
                     <h2 class="title">Registration Form</h2>
-                    <form method="POST">
+                    <form method="POST" action="reg.php">
                         <div class="row row-space">
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">first name</label>
-                                    <input class="input--style-4" type="text" name="first_name">
+                                    <input class="input--style-4" type="text" name="user_fname">
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">last name</label>
-                                    <input class="input--style-4" type="text" name="last_name">
+                                    <input class="input--style-4" type="text" name="user_lname">
                                 </div>
                             </div>
                         </div>
@@ -48,13 +49,13 @@
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Password</label>
-                                    <input class="input--style-4" type="password" name="email">
+                                    <input class="input--style-4" type="password" name="user_password">
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Re type-Password</label>
-                                    <input class="input--style-4" type="pasword" name="phone">
+                                    <input class="input--style-4" type="password" name=".">
                                 </div>
                             </div>
                         </div>
@@ -63,7 +64,7 @@
                                 <div class="input-group">
                                     <label class="label">Username</label>
                                     <div class="input-group-icon">
-                                        <input class="input--style-4 " type="text" name="username">
+                                        <input class="input--style-4 " type="text" name="user_name">
                                     </div>
                                 </div>
                             </div>
@@ -72,11 +73,11 @@
                                     <label class="label">Gender</label>
                                     <div class="p-t-10">
                                         <label class="radio-container m-r-45">Male
-                                            <input type="radio" checked="checked" name="gender">
+                                            <input type="radio" value = "M" checked="checked" name="user_gender">
                                             <span class="checkmark"></span>
                                         </label>
                                         <label class="radio-container">Female
-                                            <input type="radio" name="gender">
+                                            <input type="radio" name="user_gender" value="F">
                                             <span class="checkmark"></span>
                                         </label>
                                     </div>
@@ -87,29 +88,29 @@
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Email</label>
-                                    <input class="input--style-4" type="email" name="email">
+                                    <input class="input--style-4" type="email" name="user_email">
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Phone Number</label>
-                                    <input class="input--style-4" type="text" name="phone">
+                                    <input class="input--style-4" type="text" name="user_tp">
                                 </div>
                             </div>
                         </div>
                         <div class="input-group">
                             <label class="label">Account Type</label>
                             <div class="rs-select2 js-select-simple select--no-search">
-                                <select name="subject">
+                                <select name="user_role">
                                     <option disabled="disabled" selected="selected">Select Account Type</option>
-                                    <option>Member</option>
-                                    <option>Hoster</option>
+                                    <option value="C">Client</option>
+                                    <option value="H">Hoster</option>
                                 </select>
                                 <div class="select-dropdown"></div>
                             </div>
                         </div>
                         <div class="p-t-15">
-                            <button class="btn btn--radius-2 btn--blue" type="submit">Sign Up</button>
+                            <input class="btn btn--radius-2 btn--blue" name="submit" type="submit" value="Sign Up">
                         </div>
                     </form>
                 </div>
