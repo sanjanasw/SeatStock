@@ -17,7 +17,7 @@ require('db.php');
 		$rows = mysqli_num_rows($result);
         if($rows==1){
 			$_SESSION['username'] = $user_name;
-			header("Location: welcome.php"); // Redirect user to index.php
+			header("Location: \SeatStock/welcome.php"); // Redirect user to index.php
             }else{
                 $error = 100;
 				}
