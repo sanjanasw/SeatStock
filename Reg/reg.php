@@ -1,6 +1,5 @@
 <?php
 include "ConDB.php";
-
 	if(isset($_POST['submit'])){
 		$user_name= $_POST['user_name'];
 		$user_password = $_POST['user_password'];
@@ -21,7 +20,4 @@ include "ConDB.php";
 			die('query failed'.mysqli_error($connect));
 		}	
 	}
-
-
-
 ?>
