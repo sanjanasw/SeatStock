@@ -1,4 +1,4 @@
-<?php include "ConDB.php" ?>
+<?php include "includes/reg.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,11 +17,11 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
     <!-- Vendor CSS-->
-    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="vendor/select2/select1.min.css" rel="stylesheet" media="all">
     <link href="vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
 
     <!-- Main CSS-->
-    <link href="css/main.css" rel="stylesheet" media="all">
+    <link href="css/main_log.css" rel="stylesheet" media="all">
 </head>
 
 <body>
@@ -30,7 +30,7 @@
             <div class="card card-4">
                 <div class="card-body">
                     <h2 class="title">Registration Form</h2>
-                    <form method="POST" action="reg.php">
+                    <form method="POST" action="index_reg.php">
                         <div class="row row-space">
                             <div class="col-2">
                                 <div class="input-group">
@@ -121,7 +121,7 @@
     <!-- Jquery JS-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <!-- Vendor JS-->
-    <script src="vendor/select2/select2.min.js"></script>
+    <script src="vendor/select2/select1.min.js"></script>
 
     <!-- Main JS-->
     <script src="js/global.js"></script>

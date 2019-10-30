@@ -1,3 +1,6 @@
+<?php
+include "includes/login.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,23 +35,25 @@
 	<div class="limiter">
 		<div class="container-login100" style="background-image: url('images/bg-01.jpg');">
 			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
-				<form class="login100-form validate-form">
+				<form class="login100-form validate-form" action="" method = "POST">
 					<span class="login100-form-title p-b-49">
 						Login
 					</span>
 
 					<div class="wrap-input100 validate-input m-b-23" data-validate = "Username is reauired">
 						<span class="label-input100">Username</span>
-						<input class="input100" type="text" name="username" placeholder="Type your username">
+						<input class="input100" type="text" name="user_name" placeholder="Type your username">
 						<span class="focus-input100" data-symbol="&#xf206;"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate="Password is required">
 						<span class="label-input100">Password</span>
-						<input class="input100" type="password" name="pass" placeholder="Type your password">
+						<input class="input100" type="password" name="user_password" placeholder="Type your password">
 						<span class="focus-input100" data-symbol="&#xf190;"></span>
 					</div>
-					
+					<div class="text-left p-t-8 " style="float:left;">
+						<?php show();?>
+					</div>
 					<div class="text-right p-t-8 p-b-31">
 						<a href="#">
 							Forgot password?
@@ -58,13 +63,13 @@
 					<div class="container-login100-form-btn">
 						<div class="wrap-login100-form-btn">
 							<div class="login100-form-bgbtn"></div>
-							<button class="login100-form-btn">
+							<button class="login100-form-btn" name="submit" type="submit">
 								Login
 							</button>
 						</div>
 					</div>
 
-					<div class="txt1 text-center p-t-54 p-b-20">
+					<div class="txt1 text-center p-t-50 p-b-20">
 						<span>
 							Or Sign Up Using
 						</span>
@@ -84,12 +89,12 @@
 						</a>
 					</div>
 
-					<div class="flex-col-c p-t-155">
+					<div class="flex-col-c p-t-40">
 						<span class="txt1 p-b-17">
 							Or Sign Up Using
 						</span>
 
-						<a href="#" class="txt2">
+						<a href="\./SeatStock/Reg/index.php" class="txt2">
 							Sign Up
 						</a>
 					</div>
