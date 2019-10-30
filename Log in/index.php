@@ -1,4 +1,6 @@
-<?php include "ConDB.php" ?>
+<?php
+include "login.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,7 +35,7 @@
 	<div class="limiter">
 		<div class="container-login100" style="background-image: url('images/bg-01.jpg');">
 			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
-				<form class="login100-form validate-form" action="login.php" method = "POST">
+				<form class="login100-form validate-form" action="" method = "POST">
 					<span class="login100-form-title p-b-49">
 						Login
 					</span>
@@ -49,7 +51,9 @@
 						<input class="input100" type="password" name="user_password" placeholder="Type your password">
 						<span class="focus-input100" data-symbol="&#xf190;"></span>
 					</div>
-					
+					<div class="text-left p-t-8 " style="float:left;">
+						<?php show();?>
+					</div>
 					<div class="text-right p-t-8 p-b-31">
 						<a href="#">
 							Forgot password?
@@ -65,7 +69,7 @@
 						</div>
 					</div>
 
-					<div class="txt1 text-center p-t-54 p-b-20">
+					<div class="txt1 text-center p-t-50 p-b-20">
 						<span>
 							Or Sign Up Using
 						</span>
@@ -85,7 +89,7 @@
 						</a>
 					</div>
 
-					<div class="flex-col-c p-t-155">
+					<div class="flex-col-c p-t-40">
 						<span class="txt1 p-b-17">
 							Or Sign Up Using
 						</span>

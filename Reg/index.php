@@ -1,4 +1,4 @@
-<?php include "ConDB.php" ?>
+<?php include "reg.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,7 +30,7 @@
             <div class="card card-4">
                 <div class="card-body">
                     <h2 class="title">Registration Form</h2>
-                    <form method="POST" action="reg.php">
+                    <form method="POST" action="index.php">
                         <div class="row row-space">
                             <div class="col-2">
                                 <div class="input-group">
