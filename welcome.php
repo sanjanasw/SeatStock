@@ -91,6 +91,7 @@
           document.write(new Date().getFullYear())
         </script>, made with <i class="material-icons">favorite</i> by SeatStock
     </div>
+      </div>
   </footer>
 </body>
 
