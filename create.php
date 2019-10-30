@@ -1,7 +1,7 @@
 <?php 
 session_start();
 if(!isset($_SESSION["username"])){
-header("Location: \SeatStock\index_log.php");
+header("Location: index_log.php");
 exit(); } 
 ?>
 <!DOCTYPE html>

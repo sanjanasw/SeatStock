@@ -68,9 +68,9 @@
             <button class="btn btn-primary btn-round btn-lg">
                 <i class="material-icons">event_seat</i> find and reserve
               <div class="ripple-container"></div></button>
-            <button class="btn btn-primary btn-round btn-lg">
-              <i class="material-icons">create</i> create and vend
-            <div class="ripple-container"></div></button>
+           <a href = "\SeatStock/create/create.php"> <button class="btn btn-primary btn-round btn-lg">
+              <i class="material-icons">create</i>create and vend
+            <div class="ripple-container"></div></button></a>
           </div>
         </div>
       </div>
