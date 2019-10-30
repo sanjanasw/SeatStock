@@ -12,7 +12,6 @@
 
  * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. -->
 
-<?php include("auth.php"); ?>
  <!DOCTYPE html>
 <html lang="en">
 
@@ -40,9 +39,7 @@
           <a class="navbar-brand" href="index_log.php">
           Log In </a>
           <a class="navbar-brand" href="logout.php">
-          Log Out </a>
-          <a class="navbar-brand">
-          Welcome <?php echo $_SESSION['username']; ?>! </a>
+              Log Out </a>
           <!--
         <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="sr-only">Toggle navigation</span>
