@@ -1,10 +1,4 @@
 <?php
-/*
-Author: Javed Ur Rehman
-Website: http://www.allphptricks.com/
-*/
-
-
 $con = mysqli_connect("localhost","root","","seatstock");
 // Check connection
 if (mysqli_connect_errno())

@@ -11,9 +11,7 @@
  =========================================================
 
  * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. -->
-
-
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -34,7 +32,14 @@
     <div class="container">
       <div class="navbar-translate">
         <a class="navbar-brand" href="">
-          SeatStock </a><!--
+          SeatStock </a>
+          <a class="navbar-brand" href="index_reg.php">
+          Sign Up</a>
+          <a class="navbar-brand" href="index_log.php">
+          Log In </a>
+          <a class="navbar-brand" href="includes/logout.php">
+              Log Out </a>
+          <!--
         <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="sr-only">Toggle navigation</span>
           <span class="navbar-toggler-icon"></span>
@@ -59,12 +64,12 @@
         <div class="col-md-8 ml-auto mr-auto">
           <div class="brand text-center">
             <h1>I WANT TO</h1>
-            <button class="btn btn-primary btn-round btn-lg">
+            <a href = "events/event_index.php"><button class="btn btn-primary btn-round btn-lg">
                 <i class="material-icons">event_seat</i> find and reserve
-              <div class="ripple-container"></div></button>
-            <button class="btn btn-primary btn-round btn-lg">
-              <i class="material-icons">create</i> create and vend
-            <div class="ripple-container"></div></button>
+              <div class="ripple-container"></div></button></a>
+           <a href = "create/create_index.php"> <button class="btn btn-primary btn-round btn-lg">
+              <i class="material-icons">create</i>create and vend
+            <div class="ripple-container"></div></button></a>
           </div>
         </div>
       </div>
@@ -85,6 +90,7 @@
           document.write(new Date().getFullYear())
         </script>, made with <i class="material-icons">favorite</i> by SeatStock
     </div>
+      </div>
   </footer>
 </body>
 
