@@ -12,11 +12,6 @@
              $rslt = $row['user_id'];
              $check = $row['user_role'];
     }
-
-
-   
-    
-    
 ?>
 <!DOCTYPE html>
 <html lang="en">
