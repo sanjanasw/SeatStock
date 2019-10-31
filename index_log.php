@@ -94,7 +94,7 @@ include "includes/login.php";
 							Or Sign Up Using
 						</span>
 
-						<a href="\./SeatStock/Reg/index.php" class="txt2">
+						<a href="index_reg.php" class="txt2">
 							Sign Up
 						</a>
 					</div>

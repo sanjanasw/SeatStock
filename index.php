@@ -1,17 +1,3 @@
-<!--
- =========================================================
- * Material Kit - v2.0.6
- =========================================================
-
- * Product Page: https://www.creative-tim.com/product/material-kit
- * Copyright 2019 Creative Tim (http://www.creative-tim.com)
-   Licensed under MIT (https://github.com/creativetimofficial/material-kit/blob/master/LICENSE.md)
-
-
- =========================================================
-
- * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. -->
-
  <!DOCTYPE html>
 <html lang="en">
 
@@ -38,7 +24,7 @@
           Sign Up</a>
           <a class="navbar-brand" href="index_log.php">
           Log In </a>
-          <a class="navbar-brand" href="logout.php">
+          <a class="navbar-brand" href="includes/logout.php">
               Log Out </a>
           <!--
         <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -65,10 +51,10 @@
         <div class="col-md-8 ml-auto mr-auto">
           <div class="brand text-center">
             <h1>I WANT TO</h1>
-            <a href = "./events/event_index.php"><button class="btn btn-primary btn-round btn-lg">
+            <a href = "events/event_index.php"><button class="btn btn-primary btn-round btn-lg">
                 <i class="material-icons">event_seat</i> find and reserve
               <div class="ripple-container"></div></button></a>
-           <a href = "./create/create.php"> <button class="btn btn-primary btn-round btn-lg">
+           <a href = "create/create_index.php"> <button class="btn btn-primary btn-round btn-lg">
               <i class="material-icons">create</i>create and vend
             <div class="ripple-container"></div></button></a>
           </div>

@@ -1,46 +1,41 @@
-<?php 
-include "create_event.php";
+<?php
+include "../includes/db.php";
+include "../includes/auth.php";
+
+$name = ($_SESSION['username']);
+$query = "SELECT user_id FROM users WHERE user_name = '$name'";
+$result = mysqli_query($con, $query);
+        if(!$result){
+            die("FAILD!!".mysqli_error());
+        }
+while($row = mysqli_fetch_assoc($result)){
+             $rslt = $row['user_id'];
+}
+
+
+if(isset($_POST['submit'])){
+		$e_title = $_POST['e_title'];
+		$e_disc = $_POST['e_disc'];
+		$e_no_seat = $_POST['e_no_seat'];
+		$e_tprice = $_POST['e_tprice'];
+		$e_img = $_FILES['image']['name'];
+		$e_img_temp = $_FILES['image']['tmp_name'];
+//		$post_tags = $_POST['post_tags'];
+//		$post_content = $_POST['post_content'];
+//		$post_date = date('d-m-y');
+		
+		
+		move_uploaded_file($e_img_temp,"../images/event_img/$e_img");
+		
+		
+		$query = "INSERT INTO events(e_title,e_disc,e_no_seat,e_img,e_tprice,e_user_id) ";
+		$query .= "VALUES('{$e_title }','{$e_disc}','{$e_no_seat}','{$e_img}','{$e_tprice}','{$rslt}')";
+		
+		$result1 = mysqli_query($con,$query);
+		if(!$result1){
+			die('query failed'.mysqli_error($con));
+		}
+	}
+
 
 ?>
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-</head>
-
-<body>
-    <H1>Welcome <?php echo $_SESSION['username']; ?>!</H1>
-
-    <form action="" method="post" enctype="multipart/form-data">
-
-        <div class="form-group">
-            <label>Event Title</label>
-            <input type="text" class="form-control" name="e_title" >
-        </div>
-        <div class="form-group">
-            <label>No OF Seates</label>
-            <input type="text" class="form-control" name="e_no_seat">
-        </div>
-        <div class="form-group">
-            <label>Ticket Price</label>
-            <input type="text" class="form-control" name="e_tprice">
-        </div>
-        <div class="form-group">
-            <label>Post Image</label>
-            <input type="file" name="image">
-        </div>
-        <div class="form-group">
-            <label>Event Discription</label>
-            <input type="text" class="form-control " name="e_disc">
-        </div>
-        <div class="form-group">
-            <input type="submit" name="submit" class="btn btn-primary" value="submit">
-        </div>
-    </form>
-
-
-</body>
-
-</html>

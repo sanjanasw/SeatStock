@@ -1,4 +1,4 @@
-<?php include "includes/db.php";
+<?php include "../includes/db.php";
 
      global $con;
      global $result;
