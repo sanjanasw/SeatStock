@@ -1,7 +1,6 @@
 <?php
     include "../includes/db.php";    
     include "../includes/auth.php";
-    global $result1;
 
     $name = ($_SESSION['username']);
     $query = "SELECT user_id,user_role FROM users WHERE user_name = '$name'";
@@ -13,15 +12,9 @@
              $rslt = $row['user_id'];
              $check = $row['user_role'];
     }
-    
-    echo $rslt;
-    echo $check;
 
-    if(isset($_POST['submit'])){
-		$e_id = $_POST['selected'];
-        
-    $query1 = "SELECT * FROM A$e_id";
-    $result1 = mysqli_query($con,$query1);
+
+   
     
     
 ?>
@@ -73,17 +66,23 @@
                     <th>Email</th>
                 </tr>
                 <?php
-            global $result1;
-            if(!$result1){
+                
+                 if(isset($_POST['submit'])){
+		      $e_id = $_POST['selected'];
+        
+              $query1 = "SELECT * FROM A$e_id";
+            $result = mysqli_query($con,$query1);
+                 }
+            if(!$result){
             die("<h1>Select One Option<h1>".mysqli_error($con));
         }
-    }
-			
-    while($row1 = mysqli_fetch_assoc($result1)){
+    
+    
+    while($row1 = mysqli_fetch_assoc($result)){
         			
         $t_id = $row1['t_id'];
 		$user_id = $row1['user_id'];
-        $h_id = $row1['h_id'];
+        
         
     $query2 = "SELECT * FROM users WHERE user_id = $user_id";
     $result2 = mysqli_query($con,$query2);
@@ -107,7 +106,7 @@
         echo "</tr>";
     }
         }
-    
+        
     ?>
             </table>
         </div>
