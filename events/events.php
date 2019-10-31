@@ -58,42 +58,50 @@ $query = "SELECT user_id FROM users WHERE user_name = '$name'";
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
 </head>
+
 <body>
     <h1><?php echo $e_title; ?></h1>
-    <p> by  <?php echo $user_name; ?></p>
+    <p> by <?php echo $user_name; ?></p>
     <hr>
     <img src="../images/event_img/<?php echo $e_img?>" alt="">
     <hr>
-    <p>   <?php echo $e_disc; ?></p>
-    <p>   <?php echo $e_no_seat; ?></p>
-    <p>   <?php echo $e_no_seat; ?></p>
-    <p>   <?php echo $e_tprice; ?></p>
-    <p>   <?php echo $user_email; ?></p>
-    <p> <?php echo $user_tp; ?></p>
+    <p> <?php echo $e_disc; ?></p>
+    <p> Seats : <?php echo $e_no_seat; ?></p>
+    <p> Price : Rs <?php echo $e_tprice; ?></p>
+    <h4>Contact Us For More Details</h4>
+    <p> Email : <?php echo $user_email; ?></p>
+    <p> Hotline : <?php echo $user_tp; ?></p>
     <?php }}} ?>
     
+    <hr>
+    <h3>Select Seat Number And Resave.</h3>
     <form action="" method="post" enctype="multipart/form-data">
         <div class="form-group">
-			<label>Seat Number</label>
-			<select name="selected">
-				<?php
+            <label>Seat Number</label>
+            <select name="selected">
+                <?php
 					$query = "SELECT * FROM A$rslt1";
 					$rslt = mysqli_query($con,$query);
 					while($row = mysqli_fetch_assoc($rslt)){
 						$t_id = $row['t_id'];
+                        $user_id = $row['user_id'];
 				
+				    if($user_id==0){
+                        echo"<option value='{$t_id}'>Seat No: $t_id</option>";
+                    }
 				
-				echo"<option value='{$t_id}'>$t_id</option>";
 					}
-				?>				
-			</select>
-		</div> 
-       <input type="submit" name="submit" class="btn btn-primary" value="Book">       
+				?>
+            </select>
+        </div>
+        <input type="submit" name="submit" class="btn btn-primary" value="Resave">
     </form>
-    
+
 </body>
+
 </html>

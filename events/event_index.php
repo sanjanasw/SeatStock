@@ -19,9 +19,6 @@ include "../includes/auth.php";
     while($row = mysqli_fetch_assoc($select_all_events)){
 		$e_id = $row['e_id'];				
         $e_title = $row['e_title'];
-//		$e_user_id = $row['e_user_id'];
-//		$e_no_seat = $row['e_no_seat'];
-//		$e_disc = $row['e_disc'];
 		$e_img = $row['e_img'];
         $e_tprice = $row['e_tprice'];
 ?>

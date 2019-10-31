@@ -31,6 +31,7 @@ include "includes/login.php";
 <!--===============================================================================================-->
 </head>
 <body>
+<?php include "includes/navbar.php"; ?>
 	
 	<div class="limiter">
 		<div class="container-login100" style="background-image: url('images/bg-01.jpg');">

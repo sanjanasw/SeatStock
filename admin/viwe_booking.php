@@ -29,10 +29,10 @@
 </head>
 
 <body>
-
+    <?php include "../includes/navbar.php"; ?>
 
     <div class="container">
-       
+       <br><br><br>
        
        <form action="" method="post" enctype="multipart/form-data">
 			<label>Event : </label>

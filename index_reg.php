@@ -25,6 +25,7 @@
 </head>
 
 <body>
+   <?php include "includes/navbar.php"; ?>
     <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
         <div class="wrapper wrapper--w680">
             <div class="card card-4">
