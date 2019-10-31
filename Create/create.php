@@ -49,6 +49,7 @@ if(isset($_POST['submit'])){
         $query1 = "CREATE TABLE A$rslt (
                     t_id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
                     e_id INT NOT NULL,
+                    h_id VARCHAR(255) NOT NULL,
                     user_id INT NOT NULL
                     )";
         $result2 = mysqli_query($con,$query1);
@@ -58,7 +59,7 @@ if(isset($_POST['submit'])){
             
 
         for ($x = 1; $x <= $e_no_seat; $x++) {
-            $query = "INSERT INTO A$rslt (t_id, e_id) VALUES('$x','$rslt') ";
+            $query = "INSERT INTO A$rslt (t_id, e_id, h_id) VALUES('$x','$rslt', '$name') ";
             $result3 = mysqli_query($con,$query);
 		    if(!$result3){
 			     die('query failed'.mysqli_error($con));
