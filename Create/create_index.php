@@ -19,6 +19,10 @@ include "create.php";
             <label>Event Title</label>
             <input type="text" class="form-control" name="e_title" >
         </div>
+        <div>
+            <input type="radio" name="e_type" value="E" checked> Event
+            <input type="radio" name="e_type" value="T"> Travel
+        </div>
         <div class="form-group">
             <label>No OF Seates</label>
             <input type="text" class="form-control" name="e_no_seat">
