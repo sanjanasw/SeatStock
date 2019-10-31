@@ -65,10 +65,10 @@
         <div class="col-md-8 ml-auto mr-auto">
           <div class="brand text-center">
             <h1>I WANT TO</h1>
-            <button class="btn btn-primary btn-round btn-lg">
+            <a href = "./events/event_index.php"><button class="btn btn-primary btn-round btn-lg">
                 <i class="material-icons">event_seat</i> find and reserve
-              <div class="ripple-container"></div></button>
-           <a href = "\SeatStock/create/create.php"> <button class="btn btn-primary btn-round btn-lg">
+              <div class="ripple-container"></div></button></a>
+           <a href = "./create/create.php"> <button class="btn btn-primary btn-round btn-lg">
               <i class="material-icons">create</i>create and vend
             <div class="ripple-container"></div></button></a>
           </div>
