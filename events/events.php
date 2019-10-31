@@ -1,5 +1,14 @@
 <?php
 include "../includes/db.php";
+include "../includes/auth.php";
+
+$name = $_SESSION['username'];
+$query = "SELECT user_id FROM users WHERE user_name = '$name'";
+    $get_id = mysqli_query($con,$query);
+    while($row = mysqli_fetch_assoc($get_id)){
+        $current_user_id = $row['user_id'];
+    }
+
     if(isset($_GET['id'])){
         $e_id = $_GET['id'];
 	$query = "SELECT * FROM events WHERE e_id = '$e_id'";
@@ -20,7 +29,32 @@ include "../includes/db.php";
         $user_name = $row2['user_name'];
         $user_email = $row2['user_email'];
 		$user_tp = $row2['user_tp'];
+        
+            
+        $query = "SELECT e_id FROM events WHERE e_title = '{$e_title}'";
+        $result = mysqli_query($con, $query);
+        if(!$result){
+            die("FAILD!!".mysqli_error($con));
+        }
+        while($row = mysqli_fetch_assoc($result)){
+             $rslt1 = $row['e_id'];
+        }
+        
     
+        
+    if(isset($_POST['submit'])){
+		$t_id = $_POST['selected'];
+        
+    $query3 = "UPDATE A$rslt1 SET user_id =  $current_user_id WHERE t_id = $t_id ";
+        
+    $result = mysqli_query($con,$query3);
+        if(!$result){
+            die("Error in updating category".mysqli_error($con));
+        }
+    }
+        
+
+        
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -41,5 +75,25 @@ include "../includes/db.php";
     <p>   <?php echo $user_email; ?></p>
     <p> <?php echo $user_tp; ?></p>
     <?php }}} ?>
+    
+    <form action="" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+			<label>Seat Number</label>
+			<select name="selected">
+				<?php
+					$query = "SELECT * FROM A$rslt1";
+					$rslt = mysqli_query($con,$query);
+					while($row = mysqli_fetch_assoc($rslt)){
+						$t_id = $row['t_id'];
+				
+				
+				echo"<option value='{$t_id}'>$t_id</option>";
+					}
+				?>				
+			</select>
+		</div> 
+       <input type="submit" name="submit" class="btn btn-primary" value="Book">       
+    </form>
+    
 </body>
 </html>
