@@ -30,7 +30,7 @@
             <div class="card card-4">
                 <div class="card-body">
                     <h2 class="title">Registration Form</h2>
-                    <form method="POST" action="index_reg.php">
+                    <form method="POST" action="">
                         <div class="row row-space">
                             <div class="col-2">
                                 <div class="input-group">
@@ -126,7 +126,6 @@
     <!-- Main JS-->
     <script src="js/global.js"></script>
 
-</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</body>
 
 </html>
-<!-- end document-->
