@@ -23,7 +23,7 @@ if(isset($_POST['submit'])){
 		$e_img_temp = $_FILES['image']['tmp_name'];
         $e_type = $_POST['e_type'];
 		
-		if($check=="H"){
+if($check=="H"){
             
 		move_uploaded_file($e_img_temp,"../images/event_img/$e_img");
 		
@@ -43,8 +43,7 @@ if(isset($_POST['submit'])){
         }
         while($row = mysqli_fetch_assoc($result)){
              $rslt = $row['e_id'];
-        }
-            
+        }            
             
         $query1 = "CREATE TABLE A$rslt (
                     t_id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
@@ -66,10 +65,9 @@ if(isset($_POST['submit'])){
         }
             
         header("Location: ../index.php");
+        
         }else{
             echo "Client Account Can't Host Event";
         }
 	}
-
-
 ?>
