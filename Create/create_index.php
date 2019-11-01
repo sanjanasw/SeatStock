@@ -16,7 +16,7 @@ include "create.php";
    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
    <!-- Material Kit CSS -->
-   <link href="assets/css/material-kit.css?v=2.0.6" rel="stylesheet" />
+   <link href="../assets/css/material-kit.css?v=2.0.6" rel="stylesheet" />
  </head>
  
  <body>
@@ -75,7 +75,7 @@ include "create.php";
                         <label>Choose an image</label>
                         <div class="custom-file">
                                 <label class="custom-file-label" for="customFile"></label>
-                                <input type="file" class="custom-file-input" id="customFile"  name="image">
+                                <input type="file" class="btn btn-primary" id="customFile"  name="image">
                         </div>
                     </div>
 
