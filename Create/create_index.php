@@ -28,7 +28,7 @@ include "create.php";
             <div class="card-header card-header-primary text-center">
               <h4 class="card-title">LETS CREATE YOUR EVENT</h4>
             </div>
-            <p class="description text-center"><?php echo $_SESSION['username']; ?> tell us about your event!</p>
+            <p class="description text-center">HI! <?php echo $_SESSION['username']; ?>, tell us about your event!</p>
             
             
             <div class="card-body">
