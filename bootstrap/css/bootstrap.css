@@ -390,6 +390,10 @@ h6, .h6 {
   font-size: 1rem;
 }
 
+footer{
+  position:static;
+}
+
 .lead {
   font-size: 1.25rem;
   font-weight: 300;
@@ -1866,7 +1870,7 @@ pre code {
   background-color: #fff;
   background-clip: padding-box;
   border: 1px solid #ced4da;
-  border-radius: 0.25rem;
+  border-radius: 50px;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
@@ -1878,6 +1882,7 @@ pre code {
 
 .form-control::-ms-expand {
   background-color: transparent;
+  
   border: 0;
 }
 
@@ -2424,6 +2429,7 @@ fieldset:disabled a.btn {
   background-color: #007bff;
   border-color: #007bff;
   background: #0275D8;
+  
 }
 
 .btn-primary:hover {
@@ -3820,15 +3826,17 @@ input[type="button"].btn-block {
   width: 100%;
   height: calc(1.5em + 0.75rem + 2px);
   margin-bottom: 0;
+  
 }
 
 .custom-file-input {
   position: relative;
-  z-index: 2;
+  border-radius: 50px;
   width: 100%;
-  height: calc(1.5em + 0.75rem + 2px);
-  margin: 0;
-  opacity: 0;
+  background-color: white;
+  color: black;
+  opacity: 100;
+  
 }
 
 .custom-file-input:focus ~ .custom-file-label {
@@ -10041,7 +10049,7 @@ a.text-dark:hover, a.text-dark:focus {
 }
 /*# sourceMappingURL=bootstrap.css.map */
 .nounderline {
-  text-decoration: none !important
+  text-decoration: none !important;
 }
 
 html, body {
@@ -10050,7 +10058,15 @@ html, body {
   min-width : 100%;
   background-size: cover;
   background-repeat:no-repeat;
-  overflow-y: hidden;
-  overflow-x: hidden;
+  overflow: auto;
   height: 100%;
  }
+
+.bg-blue-gradient {
+  background: linear-gradient(220.18deg, #0025E9 0%, #4800E0 100%);
+ }
+
+.bg-redish-gradient {
+  background: linear-gradient(220.12deg, #FF7A00 -24.88%, #FF006B 99.5%);
+}
+
