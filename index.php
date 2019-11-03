@@ -21,10 +21,10 @@
     </div>
     <div class="row text-center">
       <div class="col">
-        <button type="button" class="btn btn-primary btn-lg"><a href = "events/event_index.php" class="text-white nounderline"> FIND AND BOOK</a></button>
+        <button type="button" class="btn btn-primary btn-lg bg-blue-gradient"><a href = "events/event_index.php" class="text-white nounderline"> FIND AND BOOK</a></button>
       </div>
       <div class="col">
-        <button type="button" class="btn btn-primary btn-lg"><a href = "create/create_index.php" class="text-white nounderline"> MAKE AND VEND</a></button>
+        <button type="button" class="btn btn-primary btn-lg bg-blue-gradient"><a href = "create/create_index.php" class="text-white nounderline"> MAKE AND VEND</a></button>
       </div>
     </div>
   </div>
