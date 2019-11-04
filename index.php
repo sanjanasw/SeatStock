@@ -13,6 +13,7 @@
   <title>SeatStock</title>
 </head>
 <body>
+ <?php include "includes/navbar.php"; ?>
   <div class="card shadow-lg p-3 mb-5 bg-white rounded-lg" style="max-width: 30rem;">
     <div class="row text-center">
       <div class="col">
