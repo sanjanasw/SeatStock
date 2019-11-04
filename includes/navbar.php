@@ -9,10 +9,13 @@
           Log In </a>
           <a class="navbar-brand" href="includes/logout.php">
               Log Out </a>
+              
+          <select>
           <a class="navbar-brand" href="admin/viwe_booking.php">
               Test1 </a>
           <a class="navbar-brand" href="admin/view_app_u.php">
               Test2 </a>
+          </select>
           <!--/
         <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="sr-only">Toggle navigation</span>

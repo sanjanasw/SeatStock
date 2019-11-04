@@ -31,7 +31,7 @@
            <th>Gender</th>
            <th>Contact Number</th>
            <th>Role</th>
-           <th>Registered Date</th>
+           <th>Registered Date & Time</th>
        </tr>
       <?php
     global $result;
@@ -43,6 +43,7 @@
         $u6 = $row['user_tp'];
         $u7 = $row['user_role'];
         $u8 = $row['trn_date'];
+        $user_id = $row['user_id'];
         echo "<tr>";
              echo "<td>{$u1}</td>";
              echo "<td>{$u2}</td>";
@@ -51,6 +52,9 @@
              echo "<td>{$u6}</td>";
              echo "<td>{$u7}</td>";
              echo "<td>{$u8}</td>";
+             echo"<td><a href='approve.php?approve=$user_id'>Approve</a></td>";
+			 echo"<td><a href='approve.php?ban=$user_id'>Ban</a></td>";
+             echo"<td><a href='approve.php?delete=$user_id'>Delete</a></td>";
         echo "</tr>";
     }
     ?>

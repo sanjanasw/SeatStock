@@ -23,7 +23,7 @@ if(isset($_POST['submit'])){
 		$e_img_temp = $_FILES['image']['tmp_name'];
         $e_type = $_POST['e_type'];
 		
-if($check=="H"){
+if($check=="A"){
             
 		move_uploaded_file($e_img_temp,"../images/event_img/$e_img");
 		
@@ -66,8 +66,10 @@ if($check=="H"){
             
         header("Location: ../index.php");
         
+        }else if($check=="H"){
+            echo "Your Account Not Approved Yet. Please Wait For Admins Approval";
         }else{
             echo "Client Account Can't Host Event";
-        }
+}
 	}
 ?>
