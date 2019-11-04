@@ -1,9 +1,11 @@
 <?php
         include "../includes/db.php";
         include "../includes/auth.php";
+
         $name = ($_SESSION['username']);
-		$query = "SELECT * from users WHERE user_name = {$name}";
+		$query = "SELECT * from users WHERE user_name = '$name'";
 		$result = mysqli_query($con,$query);
+
 	    while($row = mysqli_fetch_assoc($result)){
 		  $user_name= $row['user_name'];
           $user_password = $row['user_password'];
@@ -22,12 +24,11 @@
 		$user_email = $_POST['user_email'];
 		$user_fname = $_POST['user_fname'];
 		$user_lname = $_POST['user_lname'];
-		$user_role = $_POST['user_role'];
-        $user_gender = $row['user_gender'];
+        $user_tp = $row['user_tp'];
         $user_tp = $row['user_tp'];
 		
 
-		$query = "UPDATE users set user_name = '{$user_name}',user_password = '{$user_password}',user_fname = '{$user_fname}',user_lname = '{$user_lname}',user_role = '{$user_role}',user_gender = '{$user_gender}',user_tp = '{$user_tp}' WHERE user_name = {$name}";
+		$query = "UPDATE users set user_name = '{$user_name}',user_password = '{$user_password}',user_fname = '{$user_fname}',user_lname = '{$user_lname}',user_role = '{$user_role}',user_gender = '{$user_gender}',user_tp = '{$user_tp}',user_gender = '{$user_gender}',user_role = '{$user_role}' WHERE user_name = '{$name}'";
 								
 								$result = mysqli_query($con,$query);
 								
@@ -85,21 +86,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-2">
-                                <div class="input-group">
-                                    <label class="label">Gender</label>
-                                    <div class="p-t-10">
-                                        <label class="radio-container m-r-45">Male
-                                            <input type="radio" value = "M" checked="checked" name="user_gender">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                        <label class="radio-container">Female
-                                            <input type="radio" name="user_gender" value="F">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                         <div class="row row-space">
                             <div class="col-2">
@@ -111,41 +97,13 @@
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Phone Number</label>
-                                    <input class="input--style-4" type="text" name="user_tp">
+                                    <input class="input--style-4" type="text" name="user_tp" value="<?php if(isset($user_tp)){echo $user_tp;}?>">
                                 </div>
                             </div>
                         </div>
-                        <div class="input-group">
-                            <label class="label">Account Type</label>
-                            <div class="rs-select2 js-select-simple select--no-search">
-                                <select name="user_role">
-<!--
-                                    <option disabled="disabled" selected="selected">Select Account Type</option>
-                                    <option value="C">Client</option>
-                                    <option value="H">Hoster</option>
--->
-                                    <?php
-				                    if(isset($user_roler)){
-                                        $query = "SELECT * FROM users";
-                                        $role = mysqli_query($con,$query);
-					                    while($row = mysqli_fetch_assoc($role)){
-						                  $user_role = $row['user_role'];
-						                  if(count($user_role)>=3)
-						                  echo"<option value='{$user_role}'>$user_role</option>";
-                                        else{
-							                  echo"<option value='C'>Client</option>";
-                                              echo"<option value='H'>Hoster</option>";
-                                              echo"<option value='subscriber'>subscriber</option>";
-						}
-				}
-				}
-				?>
-                                </select>
-                                <div class="select-dropdown"></div>
-                            </div>
-                        </div>
+
                         <div class="p-t-15">
-                            <input class="btn btn--radius-2 btn--blue" name="submit" type="submit" value="Sign Up">
+                            <input class="btn btn--radius-2 btn--blue" name="submit" type="submit" value="Update">
                         </div>
                     </form>
     
