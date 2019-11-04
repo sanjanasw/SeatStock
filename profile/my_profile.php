@@ -38,8 +38,6 @@
 								header("Location:my_profile.php");	
 							  }	
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
