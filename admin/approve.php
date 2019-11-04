@@ -12,10 +12,22 @@
 				}
 									
 	 }
-	if(isset($_GET['ban'])){
-				$user_id = $_GET['ban'];
+    if(isset($_GET['d1'])){
+				$user_id = $_GET['d1'];
 				
 				$query = "UPDATE users set user_role = 'H' WHERE user_id = {$user_id}";
+								
+				$result = mysqli_query($con,$query);
+                header("Location:view_app_u.php");
+				if(!$result){
+				    die("Error in Bannign...".mysqli_error($con));
+				}
+									
+	 }
+	if(isset($_GET['d2'])){
+				$user_id = $_GET['d2'];
+				
+				$query = "UPDATE users set user_role = 'C' WHERE user_id = {$user_id}";
 								
 				$result = mysqli_query($con,$query);
                 header("Location:view_app_u.php");

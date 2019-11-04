@@ -49,7 +49,7 @@
        
        
         <br><br>
-        <h1 class="text-center">Users</h1>
+        <h1 class="text-center">Reservations</h1>
         <div class="col-sx-6">
             <table border="1">
                 <tr>
@@ -89,6 +89,10 @@
         $user_email = $row2['user_email'];
         $user_gender = $row2['user_gender'];
 		$user_tp = $row2['user_tp'];
+    
+   
+        			
+
 
         echo "<tr>";
              echo "<td>{$t_id}</td>";
@@ -99,9 +103,26 @@
              echo "<td>{$user_email}</td>";
 
         echo "</tr>";
-    }
         }
+        $query3 = "SELECT * FROM guest WHERE guser_id = $user_id";
+        $result3 = mysqli_query($con,$query3);
         
+        while($row3 = mysqli_fetch_assoc($result3)){
+            $guser_fname = $row3['guser_fname'];
+            $guser_lname = $row3['guser_lname'];
+            $guser_gender = $row3['guser_gender'];
+		    $guser_tp = $row3['guser_tp'];
+        echo "<tr>";
+             echo "<td>{$t_id}</td>";
+             echo "<td>{$guser_fname}</td>";
+             echo "<td>{$guser_lname}</td>";
+             echo "<td>{$guser_gender}</td>";
+             echo "<td>{$guser_tp}</td>";
+
+        echo "</tr>";
+    
+        }
+    }
     ?>
             </table>
         </div>

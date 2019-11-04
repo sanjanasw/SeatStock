@@ -53,12 +53,13 @@
              echo "<td>{$u7}</td>";
              echo "<td>{$u8}</td>";
              echo"<td><a href='approve.php?approve=$user_id'>Approve</a></td>";
-			 echo"<td><a href='approve.php?ban=$user_id'>Ban</a></td>";
+			 echo"<td><a href='approve.php?d1=$user_id'>!Host</a></td>";
+             echo"<td><a href='approve.php?d2=$user_id'>Client</a></td>";
              echo"<td><a href='approve.php?delete=$user_id'>Delete</a></td>";
         echo "</tr>";
     }
     ?>
-       </table>
+       </table>         
         </div>
     </div>
 </body>
