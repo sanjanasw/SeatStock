@@ -21,10 +21,12 @@ include "../includes/auth.php";
         $e_title = $row['e_title'];
 		$e_img = $row['e_img'];
         $e_tprice = $row['e_tprice'];
+        $e_date = $row['e_date'];
 ?>
     <h2>
         <a href="events.php?id=<?php echo $e_id;?>"><?php echo $e_title;?></a>
     </h2>
+    <h4><?php echo $e_date;?></h4>
     <hr>
     <img src="../images/event_img/<?php echo $e_img?>" alt="">
     <hr>

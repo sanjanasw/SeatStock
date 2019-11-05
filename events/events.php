@@ -21,6 +21,7 @@ $query = "SELECT user_id FROM users WHERE user_name = '$name'";
 		$e_disc = $row['e_disc'];
 		$e_img = $row['e_img'];
         $e_tprice = $row['e_tprice'];
+        $e_date = $row['e_date'];
     
     $query2 = "SELECT * FROM users WHERE user_id = '$e_user_id'";
     $select_all_users = mysqli_query($con,$query2);
@@ -67,6 +68,7 @@ $query = "SELECT user_id FROM users WHERE user_name = '$name'";
 <body>
     <h1><?php echo $e_title; ?></h1>
     <p> by <?php echo $user_name; ?></p>
+    <h4><?php echo $e_date;?></h4>
     <hr>
     <img src="../images/event_img/<?php echo $e_img?>" alt="">
     <hr>
@@ -77,7 +79,7 @@ $query = "SELECT user_id FROM users WHERE user_name = '$name'";
     <p> Email : <?php echo $user_email; ?></p>
     <p> Hotline : <?php echo $user_tp; ?></p>
     <?php }}} ?>
-    
+
     <hr>
     <h3>Select Seat Number And Resave.</h3>
     <form action="" method="post" enctype="multipart/form-data">

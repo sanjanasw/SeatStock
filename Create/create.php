@@ -22,14 +22,15 @@ if(isset($_POST['submit'])){
 		$e_img = $_FILES['image']['name'];
 		$e_img_temp = $_FILES['image']['tmp_name'];
         $e_type = $_POST['e_type'];
+        $e_date = $_POST['e_date'];
 		
 if($check=="A"){
             
 		move_uploaded_file($e_img_temp,"../images/event_img/$e_img");
 		
 		
-		$query = "INSERT INTO events(e_title,e_disc,e_no_seat,e_img,e_tprice,e_user_id,e_type)";
-		$query .= "VALUES('{$e_title }','{$e_disc}','{$e_no_seat}','{$e_img}','{$e_tprice}','{$rslt}','{$e_type }')";
+		$query = "INSERT INTO events(e_title,e_disc,e_no_seat,e_img,e_tprice,e_user_id,e_type,e_date)";
+		$query .= "VALUES('{$e_title }','{$e_disc}','{$e_no_seat}','{$e_img}','{$e_tprice}','{$rslt}','{$e_type }', '{$e_date}')";
 		
 		$result1 = mysqli_query($con,$query);
 		if(!$result1){
