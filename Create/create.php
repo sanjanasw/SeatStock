@@ -1,4 +1,5 @@
 <?php
+global $error;
 include "../includes/db.php";
 include "../includes/auth.php";
 
@@ -68,9 +69,19 @@ if($check=="A"){
         header("Location: ../index.php");
         
         }else if($check=="H"){
-            echo "Your Account Not Approved Yet. Please Wait For Admins Approval";
+            $error=100;
         }else{
-            echo "Client Account Can't Host Event";
+            $error=200;
 }
 	}
+
+    function show(){    
+    global $error;
+    if($error==100){
+        echo "<p style='color:black;'>*Your Account Not Approved Yet. Please Wait For Admins Approval</p>";
+    }else if($error==200){
+        echo "<p style='color:black;'>*Client Account Can't Host Event</p>";
+    }
+    }
+
 ?>

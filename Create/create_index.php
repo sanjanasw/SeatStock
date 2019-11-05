@@ -27,13 +27,13 @@ include "create.php";
             <form class="form" meaction="" method="post" enctype="multipart/form-data">
 
                 <div class="form-group">
-                    <h5 class="text-white"><?php echo $_SESSION['username']; ?>, give your thing a name!</h5>
+                    <h5 class="text-white">Hi! <?php echo $_SESSION['username']; ?>, give your thing a name!</h5>
                     <input type="text" class="form-control" name="e_title" placeholder="Green Fiesta, NSBM-KANDY Bus, ...">
                 </div>
 
                 <div class="form-group">
                     <h5 class="text-white">When???</h5>
-                    <input type="date" class="form-control " name="e_date" >
+                    <input type="date" class="form-control " name="e_date">
                 </div>
 
                 <div class="form-group form-check form-check-radio">
@@ -63,6 +63,10 @@ include "create.php";
                 <div class="form-group">
                     <h5 class="text-white">Event description</h5>
                     <textarea type="text" class="form-control " name="e_disc"></textarea>
+                </div>
+
+                <div>
+                    <span class="mt-5"><?php show();?></span>
                 </div>
 
                 <div class="form-group">
