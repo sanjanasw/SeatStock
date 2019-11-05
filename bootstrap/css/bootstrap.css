@@ -10070,3 +10070,11 @@ html, body {
   background: linear-gradient(220.12deg, #FF7A00 -24.88%, #FF006B 99.5%);
 }
 
+select{
+  background: linear-gradient(220.18deg, #0025E9 0%, #4800E0 100%); !important;
+  color: #fff !important;
+}
+option:not(:checked) { 
+  background: linear-gradient(220.18deg, #0025E9 0%, #4800E0 100%); !important;
+  color: #fff !important;
+}

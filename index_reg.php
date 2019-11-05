@@ -1,132 +1,92 @@
 <?php include "includes/reg.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <!-- Required meta tags-->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Title Page-->
-    <title>Register</title>
-
-    <!-- Icons font CSS-->
-    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
-    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
-    <!-- Font special for pages-->
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
-    <!-- Vendor CSS-->
-    <link href="vendor/select2/select1.min.css" rel="stylesheet" media="all">
-    <link href="vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
-
-    <!-- Main CSS-->
-    <link href="css/main_log.css" rel="stylesheet" media="all">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <script src="bootstrap/js/bootstrap.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/eee0ff9583.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <title>SeatStock Sign Up</title>
 </head>
-
 <body>
-   <?php include "includes/navbar.php"; ?>
-    <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
-        <div class="wrapper wrapper--w680">
-            <div class="card card-4">
-                <div class="card-body">
-                    <h2 class="title">Registration Form</h2>
-                    <form method="POST" action="">
-                        <div class="row row-space">
-                            <div class="col-2">
-                                <div class="input-group">
-                                    <label class="label">first name</label>
-                                    <input class="input--style-4" type="text" name="user_fname">
-                                </div>
-                            </div>
-                            <div class="col-2">
-                                <div class="input-group">
-                                    <label class="label">last name</label>
-                                    <input class="input--style-4" type="text" name="user_lname">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row row-space">
-                            <div class="col-2">
-                                <div class="input-group">
-                                    <label class="label">Password</label>
-                                    <input class="input--style-4" type="password" name="user_password">
-                                </div>
-                            </div>
-                            <div class="col-2">
-                                <div class="input-group">
-                                    <label class="label">Re type-Password</label>
-                                    <input class="input--style-4" type="password" name=".">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row row-space">
-                            <div class="col-2">
-                                <div class="input-group">
-                                    <label class="label">Username</label>
-                                    <div class="input-group-icon">
-                                        <input class="input--style-4 " type="text" name="user_name">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-2">
-                                <div class="input-group">
-                                    <label class="label">Gender</label>
-                                    <div class="p-t-10">
-                                        <label class="radio-container m-r-45">Male
-                                            <input type="radio" value = "M" checked="checked" name="user_gender">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                        <label class="radio-container">Female
-                                            <input type="radio" name="user_gender" value="F">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row row-space">
-                            <div class="col-2">
-                                <div class="input-group">
-                                    <label class="label">Email</label>
-                                    <input class="input--style-4" type="email" name="user_email">
-                                </div>
-                            </div>
-                            <div class="col-2">
-                                <div class="input-group">
-                                    <label class="label">Phone Number</label>
-                                    <input class="input--style-4" type="text" name="user_tp">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="input-group">
-                            <label class="label">Account Type</label>
-                            <div class="rs-select2 js-select-simple select--no-search">
-                                <select name="user_role">
-                                    <option disabled="disabled" selected="selected">Select Account Type</option>
-                                    <option value="C">Client</option>
-                                    <option value="H">Hoster</option>
-                                </select>
-                                <div class="select-dropdown"></div>
-                            </div>
-                        </div>
-                        <div class="p-t-15">
-                            <input class="btn btn--radius-2 btn--blue" name="submit" type="submit" value="Sign Up">
-                        </div>
-                    </form>
+    <?php include "includes/navbar.php"; ?>
+    <div class="container mt-5 shadow-lg p-3 mb-5 bg-white rounded-lg text-center" style="max-width: 30rem;">
+        <div class="container shadow-lg p-2 mb-3 bg-blue-gradient rounded-lg" style="max-width: 28rem;">
+            <h3 class="text-white">LET'S CREATE YOUR ACCOUNT</h3>
+        </div>
+        <div class="container shadow-lg p-3 bg-redish-gradient rounded-lg" style="max-width: 28rem;">
+            <form class="form" action="" method="post">
+                <div class="form-group">
+                    <h5 class="text-white">First Name</h5>
+                    <input type="text" class="form-control" name="user_fname" placeholder="Amal, Kamal, Namal, etc.." id="fname" required="">
                 </div>
-            </div>
+                <div class="form-group">
+                    <h5 class="text-white">Last Name</h5>
+                    <input type="text" class="form-control" name="user_lname" placeholder="Wickrama , Abey, Perera, etc.." id="lname" required="">
+                </div>
+                <div class="form-group">
+                    <h5 class="text-white">Username</h5>
+                    <input type="text" class="form-control" name="user_name" placeholder="mahoganybeer007" id="genout" required="">
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary btn-link btn-wd btn-lg bg-blue-gradient text-white nounderline" style="width:100%;" onclick="usernamegen(3)">Generate
+                    </button>
+                </div>
+                <div class="form-group">
+                    <h5 class="text-white">Password</h5>
+                    <input type="password" class="form-control" name="user_password" placeholder="Hey don't 123 away ;((" required="">
+                </div>
+                <!--<div class="form-group">
+                    <h5 class="text-white">Confirm Password</h5>
+                    <input type="password" class="form-control" name="." placeholder="" required="">
+                </div>-->
+                <div class="form-group form-check form-check-radio">
+                    <h5 class="text-white">Gender</h5>
+                    <input class="form-check-input" type="radio" name="user_gender" value="F" checked>
+                    <label class="form-check-label text-white"><h6>Female</h6></label><br>
+                    <input class="form-check-input" type="radio" name="user_gender" value="M">
+                    <label class="form-check-label text-white"><h6>Male</h6></label>
+                </div>
+                <div class="form-group">
+                    <h5 class="text-white">Email</h5>
+                    <input type="email" class="form-control" name="user_email" placeholder="name@provider.domain" required="">
+                </div>
+                <div class="form-group">
+                    <h5 class="text-white">Phone Number</h5>
+                    <input type="text" class="form-control" name="user_tp" placeholder="+94 XX XXX XXXX" required="">
+                </div>
+                <div class="form-group">
+                    <h5 class="text-white">Account Type (Buyer or Vender)</h5>
+                    <select name="user_role" class="btn btn-primary btn-lg bg-blue-gradient text-white" style="width:100%;"  required="">
+                        <option value="C" selected="selected">I want to buy tickets</option>
+                        <option value="H">I want to sell tickets</option>
+                    </select>
+                </div>
+                <div class="form-group mb-1">
+                    <button class="btn btn-primary btn-link btn-wd btn-lg bg-blue-gradient text-white nounderline" style="width:100%;" name="submit" type="submit" value="Sign Up">Sign Up
+                    </button>
+                </div>
+            </form>
         </div>
     </div>
-
-    <!-- Jquery JS-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <!-- Vendor JS-->
-    <script src="vendor/select2/select1.min.js"></script>
-
-    <!-- Main JS-->
-    <script src="js/global.js"></script>
-
+    <script>
+        function usernamegen(length) {
+            var x = document.getElementById("fname").value;
+            var y = document.getElementById("lname").value;
+            var text = x+y;
+            var result           = '';
+            var characters       = '0123456789';
+            var charactersLength = characters.length;
+            for ( var i = 0; i < length; i++ ) {
+                  result += characters.charAt(Math.floor(Math.random() * charactersLength));
+            }
+            document.getElementById("genout").value = text+result;
+        }
+    </script>
 </body>
-
 </html>
