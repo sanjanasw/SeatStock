@@ -11,6 +11,8 @@
               Log Out </a>
           <a class="navbar-brand" href="admin/viwe_booking.php">
               View Users </a>
+          <a class="navbar-brand" href="admin/guest.php">
+              Guest </a>
           <a class="navbar-brand" href="admin/view_app_u.php">
               Test2 </a>
       </div>

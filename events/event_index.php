@@ -11,7 +11,7 @@ include "../includes/auth.php";
 </head>
 
 <body>
-    <H1>Welcome <?php echo $_SESSION['username']; ?>!</H1>
+    <H1 style="color:Blue;">Welcome <?php echo $_SESSION['username']; ?>!</H1>
     <?php
 
 	$query = "SELECT * FROM events";
@@ -23,17 +23,16 @@ include "../includes/auth.php";
         $e_tprice = $row['e_tprice'];
         $e_date = $row['e_date'];
 ?>
-    <h2>
-        <a href="events.php?id=<?php echo $e_id;?>"><?php echo $e_title;?></a>
-    </h2>
-    <h4><?php echo $e_date;?></h4>
-    <hr>
-    <img src="../images/event_img/<?php echo $e_img?>" alt="">
-    <hr>
-    <p><?php echo $e_tprice;?>.</p>
-    <a class="btn btn-primary" href="events.php?id=<?php echo $e_id;?>">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
-
-    <hr>
+    <div style="float : left;">
+        <h2><a href="events.php?id=<?php echo $e_id;?>"><?php echo $e_title;?></a></h2>
+        <h4><?php echo $e_date;?></h4>
+        <hr>
+        <img src="../images/event_img/<?php echo $e_img?>" alt="">
+        <hr>
+        <p>Rs: <?php echo $e_tprice;?></p>
+        <a class="btn btn-primary" href="events.php?id=<?php echo $e_id;?>">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
+        <hr>
+    </div>
     <?php } ?>
 </body>
 
