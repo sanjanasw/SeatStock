@@ -30,6 +30,8 @@ include "includes/login.php";
                     <div class="form-group">
                         <h5 class="text-white">Password</h5>
                         <input class="form-control" type="password" name="user_password" placeholder="Type your password" required="">
+                    </div>
+                    <div>
                         <span class="mt-5"><?php show();?></span>
                         
                     </div>

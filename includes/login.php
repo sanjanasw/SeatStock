@@ -26,7 +26,7 @@ require('db.php');
 function show(){
     global $error;
     if($error==100){
-    echo "<p style='color:Tomato;''>*Username/Password Incorrect!!!</p>";
+    echo "<p style='color:black;''>*Username/Password Incorrect!!!</p>";
     }
 }
 ?>
