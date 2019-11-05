@@ -104,17 +104,17 @@
              echo "<td>{$guser_lname}</td>";
              echo "<td>{$guser_gender}</td>";
              echo "<td>{$guser_tp}</td>";
+             echo"<td><a href='delete.php?delete=$guser_id'>Delete</a></td>";
+        echo "<tr>";
     
         }
 
     ?>
         <?php
         
-         if(isset($_POST['submit'])){
-		  $t_id = $_POST['selected'];
-          $name = $_POST['name'];
-             echo $t_id;
-             echo $name;
+        if(isset($_POST['submit'])){
+        $t_id = $_POST['selected'];
+        $name = $_POST['name'];
              
         $user_fname = ($_POST['guser_fname']);
 		$user_lname = ($_POST['guser_lname']);
@@ -128,13 +128,12 @@
         $query5 = "SELECT guser_id FROM guest WHERE guser_fname = '{$user_fname}'";
         $rslt2 = mysqli_query($con,$query5);
         while($row = mysqli_fetch_assoc($rslt2)){
-						$guser_id = $row['guser_id'];
-            echo $guser_id;
+            $guser_id = $row['guser_id'];
         }
         
-    $query3 = "UPDATE A$name SET user_id =  $guser_id WHERE t_id = $t_id ";
+        $query3 = "UPDATE A$name SET user_id =  $guser_id WHERE t_id = $t_id ";
         
-    $result = mysqli_query($con,$query3);
+        $result = mysqli_query($con,$query3);
         if(!$result){
             die("Error in updating category".mysqli_error($con));
         }
@@ -143,5 +142,6 @@
         }
            }
         ?>
+    </table>
 </body>
 </html>
