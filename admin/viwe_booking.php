@@ -18,21 +18,26 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>All Users</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+    <script src="../bootstrap/js/bootstrap.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/eee0ff9583.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <title>SeatStock</title>
 </head>
 
 <body>
     <?php include "../includes/navbar.php"; ?>
 
-    <div class="container">
-       <br><br><br>
-       
-       <form action="" method="post" enctype="multipart/form-data">
-			<label>Event : </label>
-			<select name="selected">
-				<?php
+    <div class="card shadow-lg p-3 mb-5 bg-white rounded-lg text-center" style="max-width: 50rem;">
+        <div class="container shadow-lg p-2 mb-3 bg-blue-gradient rounded-lg" style="max-width: 48rem;">
+            <form action="" method="post" enctype="multipart/form-data">
+                <label class="text-white">Event : </label>
+                <select name="selected" class="btn btn-primary dropdown-toggle">
+                    <?php
 					$query4 = "SELECT * FROM events WHERE e_user_id = $rslt";
 					$rslt1 = mysqli_query($con,$query4);
 					while($row3 = mysqli_fetch_assoc($rslt1)){
@@ -42,17 +47,16 @@
 				
 				echo"<option value='{$e_id}'>$e_title</option>";
 					}
-				?>				
-            </select>
-       <input type="submit" name="submit" class="btn btn-primary" value="Select">       
-    </form>
-       
-       
-        <br><br>
+				?>
+                </select>
+                <input type="submit" name="submit" class="btn btn-primary" value="Select">
+            </form>
+        </div>
+        <div class="container shadow-lg p-3 bg-redish-gradient rounded-lg" style="max-width: 48rem;">
         <h1 class="text-center">Reservations</h1>
         <div class="col-sx-6">
-            <table border="1">
-                <tr>
+            <table class="table-bordered table-info table-hover">
+                <tr class="table-danger">
                     <th>Seat Number</th>
                     <th>First Name</th>
                     <th>Last Name</th>
@@ -89,12 +93,8 @@
         $user_email = $row2['user_email'];
         $user_gender = $row2['user_gender'];
 		$user_tp = $row2['user_tp'];
-    
-   
-        			
 
-
-        echo "<tr>";
+        echo "<tr class='table-warning'>";
              echo "<td>{$t_id}</td>";
              echo "<td>{$user_fname}</td>";
              echo "<td>{$user_lname}</td>";
@@ -112,6 +112,7 @@
             $guser_lname = $row3['guser_lname'];
             $guser_gender = $row3['guser_gender'];
 		    $guser_tp = $row3['guser_tp'];
+            
         echo "<tr>";
              echo "<td>{$t_id}</td>";
              echo "<td>{$guser_fname}</td>";
@@ -125,6 +126,7 @@
     }
     ?>
             </table>
+        </div>
         </div>
     </div>
 </body>

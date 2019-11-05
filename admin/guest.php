@@ -23,37 +23,46 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+    <script src="../bootstrap/js/bootstrap.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/eee0ff9583.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <title>SeatStock</title>
 </head>
+
 <body>
-   
-    <form action="" method="post" enctype="multipart/form-data">
-        <label>Event : </label>
-        <select name="selected1">
-            <?php
+    <div class="card shadow-lg p-3 mb-5 bg-white rounded-lg text-center" style="max-width: 30rem;">
+        <div class="container shadow-lg p-2 mb-3 bg-blue-gradient rounded-lg" style="max-width: 28rem;">
+            <form action="" method="post" enctype="multipart/form-data">
+                <label class="text-white">Event : </label>
+                <select name="selected1" class="btn btn-primary dropdown-toggle">
+                    <?php
 					$query4 = "SELECT * FROM events WHERE e_user_id = $rslt";
 					$rslt1 = mysqli_query($con,$query4);
 					while($row3 = mysqli_fetch_assoc($rslt1)){
 						$e_title = $row3['e_title'];
                         $e_id = $row3['e_id'];
-				
-				
-				echo"<option value='{$e_id}'>$e_title</option>";
+                        echo"<option value='{$e_id}'>$e_title</option>";
 					}
 				?>
-        </select>
-        <input type="submit" name="submit1" class="btn btn-primary" value="Select">
-    </form>
-    <br><br>
-    
-    <h3>Select Seat Number And Resave.</h3>
-    <form action="" method="post" enctype="multipart/form-data">
-        <div class="form-group">
-            <label>Seat Number</label>
-            <select name="selected">
-                <?php
+                </select>
+                <input type="submit" name="submit1" class="btn btn-primary" value="Select">
+            </form>
+        </div>
+        <div class="container shadow-lg p-2 mb-3 bg-blue-gradient rounded-lg" style="max-width: 28rem;">
+        <h5 class="text-white">Select Seat Number And Resave</h5>
+        <form action="" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label class="text-white">Seat Number</label>
+                <select name="selected" class="btn btn-primary dropdown-toggle">
+                    <?php
 					$query = "SELECT * FROM A$rslt10";
 					$rslt = mysqli_query($con,$query);
 					while($row = mysqli_fetch_assoc($rslt)){
@@ -66,30 +75,36 @@
 				
 					}
 				?>
-            </select>
-            <input type="radio" name="name" value="<?php echo $rslt10; ?>" checked="checked" style="display: none;">
-                    <lable>F Name</lable>
-        <input type="text" name="guser_fname">
-        <lable>L Name</lable>
-        <input type="text" name="guser_lname">
-        <lable>Gender</lable>
-        <input type="radio" name="guser_gender" value="M" checked="checked">Male
-        <input type="radio" name="guser_gender" value="F">Female
-        <lable>Contact</lable>
-        <input type="text" name="guser_tp">
-        <input type="submit" name="submit" value="Add User">
-    
+                </select>
+                <input type="radio" name="name" value="<?php echo $rslt10; ?>" checked="checked" style="display: none;">
+            </div>
+            <lable>F Name</lable>
+            <input type="text" name="guser_fname">
+            <br>
+            <lable>L Name</lable>
+            <input type="text" name="guser_lname">
+            <br>
+            <lable>Gender</lable>
+            <br>
+            <input type="radio" name="guser_gender" value="M" checked="checked">Male
+            <input type="radio" name="guser_gender" value="F">Female
+            <br>
+            <lable>Contact</lable>
+            <input type="text" name="guser_tp">
+            <br>
+            <input type="submit" name="submit" value="Add User" class="btn btn-primary">
+        </form>
         </div>
-    </form>
-       <br><br><br>
-        <table border="1">
-                <tr>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Gender</th>
-                    <th>Contact Number</th>
-                </tr>
-                <?php
+        <div class="container shadow-lg p-3 bg-redish-gradient rounded-lg" style="max-width: 28rem;">
+        <h3 class="text-white">Your Guest Reservations</h3>
+        <table class="table-bordered table-danger table-hover">
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Gender</th>
+                <th>Contact Number</th>
+            </tr>
+            <?php
                 $query3 = "SELECT * FROM guest";
         $result3 = mysqli_query($con,$query3);
         
@@ -99,7 +114,7 @@
             $guser_lname = $row3['guser_lname'];
             $guser_gender = $row3['guser_gender'];
 		    $guser_tp = $row3['guser_tp'];
-        echo "<tr>";
+        echo "<tr  class='table-warning'>";
              echo "<td>{$guser_fname}</td>";
              echo "<td>{$guser_lname}</td>";
              echo "<td>{$guser_gender}</td>";
@@ -110,7 +125,7 @@
         }
 
     ?>
-        <?php
+            <?php
         
         if(isset($_POST['submit'])){
         $t_id = $_POST['selected'];
@@ -142,6 +157,9 @@
         }
            }
         ?>
-    </table>
+        </table>
+        </div>
+    </div>
 </body>
+
 </html>
