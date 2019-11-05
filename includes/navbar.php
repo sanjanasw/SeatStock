@@ -9,9 +9,9 @@
           Log In </a>
           <a class="navbar-brand" href="includes/logout.php">
               Log Out </a>
-          <a class="navbar-brand" href="admin/viwe_booking.php">
+          <a class="navbar-brand" href="hosters/viwe_booking.php">
               View Users </a>
-          <a class="navbar-brand" href="admin/guest.php">
+          <a class="navbar-brand" href="hosters/guest.php">
               Guest </a>
           <a class="navbar-brand" href="admin/view_app_u.php">
               Test2 </a>

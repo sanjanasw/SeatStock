@@ -1,47 +1,47 @@
 <?php include "../includes/db.php";
 
-     global $con;
-     global $result;
      $query = "SELECT * FROM users";
      $result = mysqli_query($con, $query);
      if(!$result){
         die("FAILD!!".mysqli_error());
      }
+
+     $query1 = "SELECT * FROM events";
+     $result1 = mysqli_query($con, $query1);
+     if(!$result1){
+        die("FAILD!!".mysqli_error());
+     }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
-    <script src="bootstrap/js/bootstrap.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://kit.fontawesome.com/eee0ff9583.js" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <title>SeatStock</title>
 </head>
+
 <body>
     <?php include "../includes/navbar.php"; ?>
-    
+
     <div class="container">
-     <br><br>
-      <h1 class="text-center">Users</h1>
-       <div class="col-sx-6">
-       <table border="1">
-       <tr>
-           <th>User Name</th>
-           <th>First Name</th>
-           <th>Last Name</th>
-           <th>Gender</th>
-           <th>Contact Number</th>
-           <th>Role</th>
-           <th>Registered Date & Time</th>
-       </tr>
-      <?php
-    global $result;
+        <br><br>
+        <h1 class="text-center">Users</h1>
+        <div class="col-sx-6">
+            <table border="1">
+                <tr>
+                    <th>User Id</th>
+                    <th>User Name</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Gender</th>
+                    <th>Contact Number</th>
+                    <th>Role</th>
+                    <th>Registered Date & Time</th>
+                </tr>
+                <?php
     while($row = mysqli_fetch_assoc($result)){
+        $u0 = $row['user_id'];
         $u1 = $row['user_name'];
         $u2 = $row['user_fname'];
         $u3 = $row['user_lname'];
@@ -51,6 +51,7 @@
         $u8 = $row['trn_date'];
         $user_id = $row['user_id'];
         echo "<tr>";
+             echo "<td>{$u0}</td>";
              echo "<td>{$u1}</td>";
              echo "<td>{$u2}</td>";
              echo "<td>{$u3}</td>";
@@ -65,8 +66,36 @@
         echo "</tr>";
     }
     ?>
-       </table>         
+            </table>
+        </div>
+        <br><br>
+        <h1 class="text-center">Users</h1>
+        <div class="col-sx-6">
+            <table border="1">
+                <tr>
+                    <th>Event Id</th>
+                    <th>Event Title</th>
+                    <th>Hosters User Id</th>
+                    <th>Event Type</th>
+                </tr>
+                <?php
+    while($row1 = mysqli_fetch_assoc($result1)){
+        $u1 = $row1['e_id'];
+        $u2 = $row1['e_title'];
+        $u3 = $row1['e_user_id'];
+        $u5 = $row1['e_type'];
+        echo "<tr>";
+             echo "<td>{$u1}</td>";
+             echo "<td>{$u2}</td>";
+             echo "<td>{$u3}</td>";
+             echo "<td>{$u5}</td>";
+             echo"<td><a href='approve.php?delete_e=$u1'>Delete</a></td>";
+        echo "</tr>";
+    }
+    ?>
+            </table>
         </div>
     </div>
 </body>
+
 </html>
