@@ -1,6 +1,7 @@
 <?php include "includes/reg.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,6 +14,7 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <title>SeatStock Sign Up</title>
 </head>
+
 <body>
     <?php include "includes/navbar.php"; ?>
     <div class="container mt-5 shadow-lg p-3 mb-5 bg-white rounded-lg text-center" style="max-width: 30rem;">
@@ -47,10 +49,13 @@
                 </div>-->
                 <div class="form-group form-check form-check-radio">
                     <h5 class="text-white">Gender</h5>
-                    <input class="form-check-input" type="radio" name="user_gender" value="F" checked>
-                    <label class="form-check-label text-white"><h6>Female</h6></label><br>
-                    <input class="form-check-input" type="radio" name="user_gender" value="M">
-                    <label class="form-check-label text-white"><h6>Male</h6></label>
+                    <input class="form-check-input" type="radio" name="user_gender" value="M" checked>
+                    <label class="form-check-label text-white">                 <h6>Male&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h6>
+                    </label>
+                    <input class="form-check-input" type="radio" name="user_gender" value="F">
+                    <label class="form-check-label text-white">
+                        <h6>Female</h6>
+                    </label>
                 </div>
                 <div class="form-group">
                     <h5 class="text-white">Email</h5>
@@ -62,7 +67,7 @@
                 </div>
                 <div class="form-group">
                     <h5 class="text-white">Account Type (Buyer or Vender)</h5>
-                    <select name="user_role" class="btn btn-primary btn-lg bg-blue-gradient text-white" style="width:100%;"  required="">
+                    <select name="user_role" class="btn btn-primary btn-lg bg-blue-gradient text-white" style="width:100%;" required="">
                         <option value="C" selected="selected">I want to buy tickets</option>
                         <option value="H">I want to sell tickets</option>
                     </select>
@@ -78,15 +83,17 @@
         function usernamegen(length) {
             var x = document.getElementById("fname").value;
             var y = document.getElementById("lname").value;
-            var text = x+y;
-            var result           = '';
-            var characters       = '0123456789';
+            var text = x + y;
+            var result = '';
+            var characters = '0123456789';
             var charactersLength = characters.length;
-            for ( var i = 0; i < length; i++ ) {
-                  result += characters.charAt(Math.floor(Math.random() * charactersLength));
+            for (var i = 0; i < length; i++) {
+                result += characters.charAt(Math.floor(Math.random() * charactersLength));
             }
-            document.getElementById("genout").value = text+result;
+            document.getElementById("genout").value = text + result;
         }
+
     </script>
 </body>
+
 </html>

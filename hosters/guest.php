@@ -38,12 +38,12 @@
 </head>
 
 <body>
-        <div class="card shadow-lg p-3 mb-5 bg-white rounded-lg text-center" style="max-width: 40rem;">
-            <div class="container shadow-lg p-2 mb-3 bg-blue-gradient rounded-lg" style="max-width: 38rem;">
-                <form action="" method="post" enctype="multipart/form-data">
-                    <label class="text-white">Event : </label>
-                    <select name="selected1" class="btn btn-primary dropdown-toggle">
-                        <?php
+    <div class="card shadow-lg p-3 mb-5 bg-white rounded-lg text-center" style="max-width: 40rem;">
+        <div class="container shadow-lg p-2 mb-3 bg-blue-gradient rounded-lg" style="max-width: 38rem;">
+            <form action="" method="post" enctype="multipart/form-data">
+                <label class="text-white">Event : </label>
+                <select name="selected1" class="btn btn-primary dropdown-toggle">
+                    <?php
 					$query4 = "SELECT * FROM events WHERE e_user_id = $rslt";
 					$rslt1 = mysqli_query($con,$query4);
 					while($row3 = mysqli_fetch_assoc($rslt1)){
@@ -52,17 +52,17 @@
                         echo"<option value='{$e_id}'>$e_title</option>";
 					}
 				?>
-                    </select>
-                    <input type="submit" name="submit1" class="btn btn-primary" value="Select">
-                </form>
-            </div>
-            <div class="container shadow-lg p-2 mb-3 bg-redish-gradient rounded-lg" style="max-width: 38rem;">
-                <h5 class="text-white">Select Seat Number And Resave</h5>
-                <form action="" method="post" enctype="multipart/form-data">
-                    <div class="form-group">
-                        <label class="text-white">Seat Number</label>
-                        <select name="selected" class="btn btn-primary dropdown-toggle">
-                            <?php
+                </select>
+                <input type="submit" name="submit1" class="btn btn-primary" value="Select">
+            </form>
+        </div>
+        <div class="container shadow-lg p-2 mb-3 bg-redish-gradient rounded-lg" style="max-width: 38rem;">
+            <h3 class="text-white">Select Seat Number And Resave</h3>
+            <form action="" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <h5 class="text-white">Seat Number</h5>
+                    <select name="selected" class="btn btn-primary dropdown-toggle">
+                        <?php
 					$query = "SELECT * FROM A$rslt10";
 					$rslt = mysqli_query($con,$query);
 					while($row = mysqli_fetch_assoc($rslt)){
@@ -75,28 +75,39 @@
 				
 					}
 				?>
-                        </select>
-                        <input type="radio" name="name" value="<?php echo $rslt10; ?>" checked="checked" style="display: none;">
-                    </div>
-                    <lable class="text-white">First Name</lable>
-                    <input type="text" name="guser_fname">
-                    <lable class="text-white">&emsp;&emsp;Last Name</lable>
-                    <input type="text" name="guser_lname">
-                    <br><br>
-                    <lable class="text-white">Gender&emsp;&emsp;</lable>
-                    <input type="radio" name="guser_gender" value="M" checked="checked"><span class="text-white">Male&emsp;&emsp;&emsp;</span>
-                    <input type="radio" name="guser_gender" value="F"><span class="text-white">Female&emsp;&emsp;</span>
-                    <lable class="text-white">&emsp;Contact&emsp;</lable>
-                    <input type="text" name="guser_tp">
-                    <br><br>
-                    <input type="submit" name="submit" value="Add User" class="btn btn-primary">
-                </form>
-            </div>
-            <div class="container shadow-lg p-2 mb-3 bg-blue-gradient rounded-lg" style="max-width: 38rem;">
-                <h3 class="text-white">Your Guest Reservations</h3>
-            </div>
-            <div class="container shadow-lg p-3 bg-redish-gradient rounded-lg" style="max-width: 38rem;">
-               <center>
+                    </select>
+                    <input type="radio" name="name" value="<?php echo $rslt10; ?>" checked="checked" style="display: none;">
+                </div>
+                <div class="form-group">
+                    <h5 class="text-white">First Name</h5>
+                    <input type="text" class="form-control" name="guser_fname" placeholder="Amal, Kamal, Namal, etc.." id="fname" required="">
+                </div>
+                <div class="form-group">
+                    <h5 class="text-white">Last Name</h5>
+                    <input type="text" class="form-control" name="guser_lname" placeholder="Wickrama , Abey, Perera, etc.." id="lname" required="">
+                </div>
+                <div class="form-group form-check form-check-radio">
+                    <h5 class="text-white">Gender</h5>
+                    <input class="form-check-input" type="radio" name="guser_gender" value="M" checked>
+                    <label class="form-check-label text-white"><h6>Male&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h6></label>
+                    <input class="form-check-input" type="radio" name="guser_gender" value="F">
+                    <label class="form-check-label text-white"><h6>Female</h6></label>
+                </div>
+                <div class="form-group">
+                    <h5 class="text-white">Phone Number</h5>
+                    <input type="text" class="form-control" name="guser_tp" placeholder="+94 XX XXX XXXX" required="">
+                </div>
+                                <div class="form-group mb-1">
+                    <button class="btn btn-primary btn-link btn-wd btn-lg bg-blue-gradient text-white nounderline" style="width:100%;" name="submit" type="submit" value="Sign Up">Add User
+                    </button>
+                </div>
+            </form>
+        </div>
+        <div class="container shadow-lg p-2 mb-3 bg-blue-gradient rounded-lg" style="max-width: 38rem;">
+            <h3 class="text-white">Your Guest Reservations</h3>
+        </div>
+        <div class="container shadow-lg p-3 bg-redish-gradient rounded-lg" style="max-width: 38rem;">
+            <center>
                 <table class="table-bordered table-danger table-hover">
                     <tr>
                         <th>First Name</th>
@@ -158,9 +169,9 @@
            }
         ?>
                 </table>
-                </center>
-            </div>
+            </center>
         </div>
+    </div>
 </body>
 
 </html>
