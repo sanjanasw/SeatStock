@@ -7,7 +7,7 @@
 		$result = mysqli_query($con,$query);
 
 	    while($row = mysqli_fetch_assoc($result)){
-		  $user_name= $row['user_name'];
+            
           $user_password = $row['user_password'];
 		  $user_email = $row['user_email'];
           $user_fname = $row['user_fname'];
@@ -20,24 +20,33 @@
         
         if(isset($_POST['submit'])){
             
-		$user_name= $_POST['user_name'];
-		$user_password = $_POST['user_password'];
+		$user_password1 = $_POST['user_password'];
 		$user_email = $_POST['user_email'];
 		$user_fname = $_POST['user_fname'];
 		$user_lname = $_POST['user_lname'];
-        $user_tp = $row['user_tp'];
-        $user_tp = $row['user_tp'];
+        $user_tp = $_POST['user_tp'];
 		
+        if($user_password==$user_password1){
+                $query = "UPDATE users set user_password = '{$user_password}',user_fname = '{$user_fname}',user_lname = '{$user_lname}',user_role = '{$user_role}',user_gender = '{$user_gender}',user_tp = '{$user_tp}',user_gender = '{$user_gender}',user_role = '{$user_role}' WHERE user_name = '{$name}'";
+								
+				$result = mysqli_query($con,$query);
+								
+				if(!$result){
+				    die("Error in updating category".mysqli_error($con));
+				}
+        }else{
+            $query = "UPDATE users set user_password = '".md5($user_password1)."',user_fname = '{$user_fname}',user_lname = '{$user_lname}',user_role = '{$user_role}',user_gender = '{$user_gender}',user_tp = '{$user_tp}',user_gender = '{$user_gender}',user_role = '{$user_role}' WHERE user_name = '{$name}'";
+								
+            $result = mysqli_query($con,$query);
+								
+            if(!$result){
+				die("Error in updating category".mysqli_error($con));
+            }
+        }	
+            header("Location:../index.php");	
+        }
 
-		$query = "UPDATE users set user_name = '{$user_name}',user_password = '".md5($user_password)."',user_fname = '{$user_fname}',user_lname = '{$user_lname}',user_role = '{$user_role}',user_gender = '{$user_gender}',user_tp = '{$user_tp}',user_gender = '{$user_gender}',user_role = '{$user_role}' WHERE user_name = '{$name}'";
-								
-								$result = mysqli_query($con,$query);
-								
-								if(!$result){
-									die("Error in updating category".mysqli_error($con));
-								}
-								header("Location:my_profile.php");	
-							  }	
+		
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -58,7 +67,8 @@
 <body>
     <div class="card shadow-lg p-3 mb-5 bg-white rounded-lg text-center" style="max-width: 30rem;">
         <div class="container shadow-lg p-2 mb-3 bg-blue-gradient rounded-lg" style="max-width: 28rem;">
-            <h3 class="text-white">EDIT YOUR ACCOUNT DETAILS</h3>
+            <h3 class="text-white">HI!! <?php echo $name ?>. </h3>
+            <h4 class="text-white">EDIT YOUR ACCOUNT DETAILS</h4>
         </div>
         <div class="container shadow-lg p-3 bg-redish-gradient rounded-lg" style="max-width: 28rem;">
             <form method="POST" action="">
@@ -80,10 +90,6 @@
                     <input class="input--style-4" type="password" name="." value="<?php //if(isset($user_password)){echo $user_password;}?>">
                 </div>
             </div>-->
-                <div class="form-group">
-                    <h5 class="text-white">User Name</h5>
-                    <input class="form-control" type="text" name="user_name" value="<?php if(isset($user_name)){echo $user_name;}?>">
-                </div>
                 <div class="form-group">
                     <h5 class="text-white">Email</h5>
                     <input class="form-control" type="email" name="user_email" value="<?php if(isset($user_email)){echo $user_email;}?>">
