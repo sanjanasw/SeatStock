@@ -41,14 +41,18 @@
                 </div>
                 <div class="form-group">
                     <h5 class="text-white">Password</h5>
-                    <input type="password" class="form-control" name="user_password" placeholder="Hey don't 123 away ;((" required="">
+                    <input type="password" id="pswd" class="form-control" name="user_password" placeholder="Hey don't 123 away ;((" required="">
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary btn-link btn-wd btn-lg bg-blue-gradient text-white nounderline" style="width:100%;" onclick="shwpswd(3)">Show Password
+                    </button>
                 </div>
                 <!--<div class="form-group">
                     <h5 class="text-white">Confirm Password</h5>
                     <input type="password" class="form-control" name="." placeholder="" required="">
                 </div>-->
+                <div><h5 class="text-white">Gender</h5></div>
                 <div class="form-group form-check form-check-radio">
-                    <h5 class="text-white">Gender</h5>
                     <input class="form-check-input" type="radio" name="user_gender" value="M" checked>
                     <label class="form-check-label text-white">                 <h6>Male&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h6>
                     </label>
@@ -92,7 +96,15 @@
             }
             document.getElementById("genout").value = text + result;
         }
-
+        
+        function shwpswd() {
+          var x = document.getElementById("pswd");
+          if (x.type === "password") {
+            x.type = "text";
+          } else {
+            x.type = "password";
+          }
+        }
     </script>
 </body>
 

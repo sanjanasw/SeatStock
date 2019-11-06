@@ -33,7 +33,6 @@ include "includes/login.php";
                     </div>
                     <div>
                         <span class="mt-5"><?php show();?></span>
-                        
                     </div>
                     <div class="form-group">
                         <button class="btn btn-primary btn-link btn-wd btn-lg bg-blue-gradient text-white nounderline" style="width:100%;" name="submit" type="submit">Login
