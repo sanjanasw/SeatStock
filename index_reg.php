@@ -44,7 +44,7 @@
                     <input type="password" id="pswd" class="form-control" name="user_password" placeholder="Hey don't 123 away ;((" required="">
                 </div>
                 <div class="form-group">
-                    <button class="btn btn-primary btn-link btn-wd btn-lg bg-blue-gradient text-white nounderline" style="width:100%;" onclick="shwpswd(3)">Show Password
+                    <button class="btn btn-primary btn-link btn-wd btn-lg bg-blue-gradient text-white nounderline" style="width:100%;" onclick="shwpswd()">Show Password
                     </button>
                 </div>
                 <!--<div class="form-group">
