@@ -17,7 +17,7 @@
                     $rslt10 = ($_POST['selected1']);
                     }
     }else{
-        echo "Only Hosters Can Operate This";
+        echo '';
     }
 
 ?>
@@ -34,14 +34,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/eee0ff9583.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <title>SeatStock</title>
+    <title>SeatStock Book for User</title>
 </head>
 
 <body>
-    <div class="card shadow-lg p-3 mb-5 bg-white rounded-lg text-center" style="max-width: 40rem;">
-        <div class="container shadow-lg p-2 mb-3 bg-blue-gradient rounded-lg" style="max-width: 38rem;">
+    <div class="container mt-5 shadow-lg p-3 mb-5 bg-white rounded-lg text-center">
+        <div class="container shadow p-2 mb-3 rounded-lg">
             <form action="" method="post" enctype="multipart/form-data">
-                <label class="text-white">Event : </label>
+                <h4 class="text-dark">Select Event : </h4>
                 <select name="selected1" class="btn btn-primary dropdown-toggle">
                     <?php
 					$query4 = "SELECT * FROM events WHERE e_user_id = $rslt";
@@ -175,3 +175,4 @@
 </body>
 
 </html>
+<!--<div class="bg-primary topp bg-blue-gradient"><div class="card shadow-lg p-3 bg-white rounded-lg text-center" style="max-width: 40rem;"><h3>Host your event to add guests</h3></div></div>-->

@@ -10078,3 +10078,13 @@ option:not(:checked) {
   background: linear-gradient(220.18deg, #0025E9 0%, #4800E0 100%); !important;
   color: #fff !important;
 }
+
+.topp {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  background-color: rgb(0,0,0);
+}

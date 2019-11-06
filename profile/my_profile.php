@@ -65,7 +65,7 @@
 </head>
 
 <body>
-    <div class="card shadow-lg p-3 mb-5 bg-white rounded-lg text-center" style="max-width: 30rem;">
+    <div class="container mt-5 shadow-lg p-3 mb-5 bg-white rounded-lg text-center" style="max-width: 30rem;">
         <div class="container shadow-lg p-2 mb-3 bg-blue-gradient rounded-lg" style="max-width: 28rem;">
             <h3 class="text-white">HI!! <?php echo $name ?>. </h3>
             <h4 class="text-white">EDIT YOUR ACCOUNT DETAILS</h4>
