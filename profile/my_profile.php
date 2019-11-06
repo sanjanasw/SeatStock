@@ -56,7 +56,7 @@
 <body>
     <div class="card shadow-lg p-3 mb-5 bg-white rounded-lg text-center" style="max-width: 30rem;">
         <div class="container shadow-lg p-2 mb-3 bg-blue-gradient rounded-lg" style="max-width: 28rem;">
-            <h3 class="text-white">LET'S EDIT YOUR ACCOUNT DETAILS</h3>
+            <h3 class="text-white">EDIT YOUR ACCOUNT DETAILS</h3>
         </div>
         <div class="container shadow-lg p-3 bg-redish-gradient rounded-lg" style="max-width: 28rem;">
             <form method="POST" action="">
@@ -72,6 +72,12 @@
                     <h5 class="text-white">Password</h5>
                     <input class="form-control" type="password" name="user_password" value="<?php if(isset($user_password)){echo $user_password;}?>">
                 </div>
+                <!-- <div class="col-2">
+                <div class="input-group">
+                    <label class="label">Re type-Password</label>
+                    <input class="input--style-4" type="password" name="." value="<?php //if(isset($user_password)){echo $user_password;}?>">
+                </div>
+            </div>-->
                 <div class="form-group">
                     <h5 class="text-white">User Name</h5>
                     <input class="form-control" type="text" name="user_name" value="<?php if(isset($user_name)){echo $user_name;}?>">
