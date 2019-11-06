@@ -38,7 +38,7 @@
 </head>
 
 <body>
-    <div class="card shadow-lg p-3 mb-5 bg-white rounded-lg text-center" style="max-width: 30rem;">
+    <div class="card shadow-lg p-3 mb-5 bg-white rounded-lg text-center col-xl-6" style="max-width: 30rem; float: left;">
         <div class="container shadow-lg p-2 mb-3 bg-blue-gradient rounded-lg" style="max-width: 28rem;">
             <form action="" method="post" enctype="multipart/form-data">
                 <label class="text-white">Event : </label>
@@ -56,7 +56,7 @@
                 <input type="submit" name="submit1" class="btn btn-primary" value="Select">
             </form>
         </div>
-        <div class="container shadow-lg p-2 mb-3 bg-blue-gradient rounded-lg" style="max-width: 28rem;">
+        <div class="container shadow-lg p-2 mb-3 bg-redish-gradient rounded-lg" style="max-width: 28rem;">
         <h5 class="text-white">Select Seat Number And Resave</h5>
         <form action="" method="post" enctype="multipart/form-data">
             <div class="form-group">
@@ -78,23 +78,25 @@
                 </select>
                 <input type="radio" name="name" value="<?php echo $rslt10; ?>" checked="checked" style="display: none;">
             </div>
-            <lable>F Name</lable>
+            <lable class="text-white">First Name</lable>
             <input type="text" name="guser_fname">
-            <br>
-            <lable>L Name</lable>
+            <br><br>
+            <lable class="text-white">Last Name</lable>
             <input type="text" name="guser_lname">
+            <br><br>
+            <lable class="text-white">Gender</lable>
             <br>
-            <lable>Gender</lable>
-            <br>
-            <input type="radio" name="guser_gender" value="M" checked="checked">Male
-            <input type="radio" name="guser_gender" value="F">Female
-            <br>
-            <lable>Contact</lable>
+            <input type="radio" name="guser_gender" value="M" checked="checked"><span class="text-white">Male</span><br>
+            <input type="radio" name="guser_gender" value="F"><span class="text-white">Female</span>
+            <br><br>
+            <lable class="text-white">Contact</lable>
             <input type="text" name="guser_tp">
-            <br>
+            <br><br>
             <input type="submit" name="submit" value="Add User" class="btn btn-primary">
         </form>
         </div>
+        </div>
+        <div class="card shadow-lg p-3 mb-5 bg-white rounded-lg text-center col-xl-6" style="max-width: 30rem;">
         <div class="container shadow-lg p-3 bg-redish-gradient rounded-lg" style="max-width: 28rem;">
         <h3 class="text-white">Your Guest Reservations</h3>
         <table class="table-bordered table-danger table-hover">
