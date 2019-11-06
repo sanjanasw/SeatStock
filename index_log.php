@@ -17,6 +17,7 @@ include "includes/login.php";
 </head>
 <body>
     <?php include "includes/navbar.php"; ?>
+    <?php show();?>
     <div class="card shadow-lg p-3 mb-5 bg-white rounded-lg text-center" style="max-width: 30rem;">
             <div class="container shadow-lg p-2 mb-3 bg-blue-gradient rounded-lg" style="max-width: 28rem;">
                     <h3 class="text-white">LOGIN</h3>
@@ -26,9 +27,6 @@ include "includes/login.php";
                     <div class="form-group">
                         <h5 class="text-white">Username</h5>
                         <input type="text" class="form-control" name="user_name" placeholder="Type your username" required="">
-                    </div>
-                    <div>
-                        <span class="mt-5"><?php show();?></span>
                     </div>
                     <div class="form-group">
                         <h5 class="text-white">Password</h5>
