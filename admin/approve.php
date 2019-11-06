@@ -49,13 +49,19 @@
 									
 	 }
 	if(isset($_GET['delete_e'])){
-				$e_id = $_GET['delete1_e'];
+				$e_id = $_GET['delete_e'];
 				
-				$query = "DELETE FROM events WHERE e_id = {$e_id}";
-								
+				$query = "DELETE FROM events WHERE e_id = {$e_id}";								
 				$result = mysqli_query($con,$query);
                 header("Location:view_app_u.php");
 				if(!$result){
+				    die("Error in deleting....".mysqli_error($con));
+				}
+        
+                $query1 = "DROP TABLE A{$e_id};";
+                $result1 = mysqli_query($con,$query1);
+                header("Location:view_app_u.php");
+				if(!$result1){
 				    die("Error in deleting....".mysqli_error($con));
 				}
 									

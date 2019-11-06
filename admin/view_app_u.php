@@ -49,7 +49,6 @@
         $u6 = $row['user_tp'];
         $u7 = $row['user_role'];
         $u8 = $row['trn_date'];
-        $user_id = $row['user_id'];
         echo "<tr>";
              echo "<td>{$u0}</td>";
              echo "<td>{$u1}</td>";
@@ -59,10 +58,10 @@
              echo "<td>{$u6}</td>";
              echo "<td>{$u7}</td>";
              echo "<td>{$u8}</td>";
-             echo"<td><a href='approve.php?approve=$user_id'>Approve</a></td>";
-			 echo"<td><a href='approve.php?d1=$user_id'>!Host</a></td>";
-             echo"<td><a href='approve.php?d2=$user_id'>Client</a></td>";
-             echo"<td><a href='approve.php?delete=$user_id'>Delete</a></td>";
+             echo"<td><a href='approve.php?approve=$u0'>Approve</a></td>";
+			 echo"<td><a href='approve.php?d1=$u0'>!Host</a></td>";
+             echo"<td><a href='approve.php?d2=$u0'>Client</a></td>";
+             echo"<td><a href='approve.php?delete=$u0'>Delete</a></td>";
         echo "</tr>";
     }
     ?>
