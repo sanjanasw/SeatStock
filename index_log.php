@@ -13,7 +13,7 @@ include "includes/login.php";
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/eee0ff9583.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <title>SeatStock - Login</title>
+    <title>SeatStock Login</title>
 </head>
 <body>
     <?php include "includes/navbar.php"; ?>
@@ -33,7 +33,6 @@ include "includes/login.php";
                     </div>
                     <div>
                         <span class="mt-5"><?php show();?></span>
-                        
                     </div>
                     <div class="form-group">
                         <button class="btn btn-primary btn-link btn-wd btn-lg bg-blue-gradient text-white nounderline" style="width:100%;" name="submit" type="submit">Login
