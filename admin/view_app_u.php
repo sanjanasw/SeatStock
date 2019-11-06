@@ -69,7 +69,7 @@
             </table>
         </div>
         <br><br>
-        <h1 class="text-center">Users</h1>
+        <h1 class="text-center">Events</h1>
         <div class="col-sx-6">
             <table border="1">
                 <tr>
@@ -77,6 +77,7 @@
                     <th>Event Title</th>
                     <th>Hosters User Id</th>
                     <th>Event Type</th>
+                    <th>Event Date</th>
                 </tr>
                 <?php
     while($row1 = mysqli_fetch_assoc($result1)){
@@ -84,11 +85,13 @@
         $u2 = $row1['e_title'];
         $u3 = $row1['e_user_id'];
         $u5 = $row1['e_type'];
+        $u6 = $row1['e_date'];
         echo "<tr>";
              echo "<td>{$u1}</td>";
              echo "<td>{$u2}</td>";
              echo "<td>{$u3}</td>";
              echo "<td>{$u5}</td>";
+             echo "<td>{$u6}</td>";
              echo"<td><a href='approve.php?delete_e=$u1'>Delete</a></td>";
         echo "</tr>";
     }
