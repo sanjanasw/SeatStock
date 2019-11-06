@@ -38,12 +38,12 @@
 </head>
 
 <body>
-    <div class="card shadow-lg p-3 mb-5 bg-white rounded-lg text-center col-xl-6" style="max-width: 30rem; float: left;">
-        <div class="container shadow-lg p-2 mb-3 bg-blue-gradient rounded-lg" style="max-width: 28rem;">
-            <form action="" method="post" enctype="multipart/form-data">
-                <label class="text-white">Event : </label>
-                <select name="selected1" class="btn btn-primary dropdown-toggle">
-                    <?php
+        <div class="card shadow-lg p-3 mb-5 bg-white rounded-lg text-center" style="max-width: 40rem;">
+            <div class="container shadow-lg p-2 mb-3 bg-blue-gradient rounded-lg" style="max-width: 38rem;">
+                <form action="" method="post" enctype="multipart/form-data">
+                    <label class="text-white">Event : </label>
+                    <select name="selected1" class="btn btn-primary dropdown-toggle">
+                        <?php
 					$query4 = "SELECT * FROM events WHERE e_user_id = $rslt";
 					$rslt1 = mysqli_query($con,$query4);
 					while($row3 = mysqli_fetch_assoc($rslt1)){
@@ -52,17 +52,17 @@
                         echo"<option value='{$e_id}'>$e_title</option>";
 					}
 				?>
-                </select>
-                <input type="submit" name="submit1" class="btn btn-primary" value="Select">
-            </form>
-        </div>
-        <div class="container shadow-lg p-2 mb-3 bg-redish-gradient rounded-lg" style="max-width: 28rem;">
-        <h5 class="text-white">Select Seat Number And Resave</h5>
-        <form action="" method="post" enctype="multipart/form-data">
-            <div class="form-group">
-                <label class="text-white">Seat Number</label>
-                <select name="selected" class="btn btn-primary dropdown-toggle">
-                    <?php
+                    </select>
+                    <input type="submit" name="submit1" class="btn btn-primary" value="Select">
+                </form>
+            </div>
+            <div class="container shadow-lg p-2 mb-3 bg-redish-gradient rounded-lg" style="max-width: 38rem;">
+                <h5 class="text-white">Select Seat Number And Resave</h5>
+                <form action="" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label class="text-white">Seat Number</label>
+                        <select name="selected" class="btn btn-primary dropdown-toggle">
+                            <?php
 					$query = "SELECT * FROM A$rslt10";
 					$rslt = mysqli_query($con,$query);
 					while($row = mysqli_fetch_assoc($rslt)){
@@ -75,38 +75,36 @@
 				
 					}
 				?>
-                </select>
-                <input type="radio" name="name" value="<?php echo $rslt10; ?>" checked="checked" style="display: none;">
+                        </select>
+                        <input type="radio" name="name" value="<?php echo $rslt10; ?>" checked="checked" style="display: none;">
+                    </div>
+                    <lable class="text-white">First Name</lable>
+                    <input type="text" name="guser_fname">
+                    <lable class="text-white">&emsp;&emsp;Last Name</lable>
+                    <input type="text" name="guser_lname">
+                    <br><br>
+                    <lable class="text-white">Gender&emsp;&emsp;</lable>
+                    <input type="radio" name="guser_gender" value="M" checked="checked"><span class="text-white">Male&emsp;&emsp;&emsp;</span>
+                    <input type="radio" name="guser_gender" value="F"><span class="text-white">Female&emsp;&emsp;</span>
+                    <lable class="text-white">&emsp;Contact&emsp;</lable>
+                    <input type="text" name="guser_tp">
+                    <br><br>
+                    <input type="submit" name="submit" value="Add User" class="btn btn-primary">
+                </form>
             </div>
-            <lable class="text-white">First Name</lable>
-            <input type="text" name="guser_fname">
-            <br><br>
-            <lable class="text-white">Last Name</lable>
-            <input type="text" name="guser_lname">
-            <br><br>
-            <lable class="text-white">Gender</lable>
-            <br>
-            <input type="radio" name="guser_gender" value="M" checked="checked"><span class="text-white">Male</span><br>
-            <input type="radio" name="guser_gender" value="F"><span class="text-white">Female</span>
-            <br><br>
-            <lable class="text-white">Contact</lable>
-            <input type="text" name="guser_tp">
-            <br><br>
-            <input type="submit" name="submit" value="Add User" class="btn btn-primary">
-        </form>
-        </div>
-        </div>
-        <div class="card shadow-lg p-3 mb-5 bg-white rounded-lg text-center col-xl-6" style="max-width: 30rem;">
-        <div class="container shadow-lg p-3 bg-redish-gradient rounded-lg" style="max-width: 28rem;">
-        <h3 class="text-white">Your Guest Reservations</h3>
-        <table class="table-bordered table-danger table-hover">
-            <tr>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Gender</th>
-                <th>Contact Number</th>
-            </tr>
-            <?php
+            <div class="container shadow-lg p-2 mb-3 bg-blue-gradient rounded-lg" style="max-width: 38rem;">
+                <h3 class="text-white">Your Guest Reservations</h3>
+            </div>
+            <div class="container shadow-lg p-3 bg-redish-gradient rounded-lg" style="max-width: 38rem;">
+               <center>
+                <table class="table-bordered table-danger table-hover">
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Gender</th>
+                        <th>Contact Number</th>
+                    </tr>
+                    <?php
                 $query3 = "SELECT * FROM guest";
         $result3 = mysqli_query($con,$query3);
         
@@ -127,7 +125,7 @@
         }
 
     ?>
-            <?php
+                    <?php
         
         if(isset($_POST['submit'])){
         $t_id = $_POST['selected'];
@@ -159,9 +157,10 @@
         }
            }
         ?>
-        </table>
+                </table>
+                </center>
+            </div>
         </div>
-    </div>
 </body>
 
 </html>
