@@ -30,13 +30,12 @@
 
 		$query = "UPDATE users set user_name = '{$user_name}',user_password = '{$user_password}',user_fname = '{$user_fname}',user_lname = '{$user_lname}',user_role = '{$user_role}',user_gender = '{$user_gender}',user_tp = '{$user_tp}',user_gender = '{$user_gender}',user_role = '{$user_role}' WHERE user_name = '{$name}'";
 								
-								$result = mysqli_query($con,$query);
-								
-								if(!$result){
-									die("Error in updating category".mysqli_error($con));
-								}
-								header("Location:my_profile.php");	
-							  }	
+        $result = mysqli_query($con,$query);
+        if(!$result){
+            die("Error in updating category".mysqli_error($con));
+        }
+        header("Location:my_profile.php");	
+        }	
 ?>
 <!DOCTYPE html>
 <html lang="en">
