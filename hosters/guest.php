@@ -64,8 +64,8 @@
                     <select name="selected" class="btn btn-primary dropdown-toggle">
                         <?php
 					$query = "SELECT * FROM A$rslt10";
-					$rslt = mysqli_query($con,$query);
-					while($row = mysqli_fetch_assoc($rslt)){
+					$rslt2 = mysqli_query($con,$query);
+					while($row = mysqli_fetch_assoc($rslt2)){
 						$t_id = $row['t_id'];
                         $user_id = $row['user_id'];
 				
@@ -116,9 +116,8 @@
                         <th>Contact Number</th>
                     </tr>
                     <?php
-                $query3 = "SELECT * FROM guest";
+        $query3 = "SELECT * FROM guest WHERE h_id = '$rslt'";
         $result3 = mysqli_query($con,$query3);
-        
         while($row3 = mysqli_fetch_assoc($result3)){
             $guser_id = $row3['guser_id'];
             $guser_fname = $row3['guser_fname'];
@@ -148,7 +147,7 @@
         $user_tp = ($_POST['guser_tp']);
              
         if($user_tp!=0 && $user_fname!="" && $user_gender!=""){
-        $query = "INSERT into guest (guser_fname, guser_lname, guser_gender, guser_tp) VALUES ('$user_fname','$user_lname' ,'$user_gender','$user_tp')";
+        $query = "INSERT into guest (guser_fname, guser_lname, guser_gender, guser_tp,h_id) VALUES ('$user_fname','$user_lname' ,'$user_gender','$user_tp','$rslt')";
         $result = mysqli_query($con,$query);
     
         $query5 = "SELECT guser_id FROM guest WHERE guser_fname = '{$user_fname}'";
@@ -157,9 +156,9 @@
             $guser_id = $row['guser_id'];
         }
         
-        $query3 = "UPDATE A$name SET user_id =  $guser_id WHERE t_id = $t_id ";
-        
+        $query3 = "UPDATE A$name SET user_id =  $guser_id WHERE t_id = $t_id";        
         $result = mysqli_query($con,$query3);
+            
         if(!$result){
             die("Error in updating category".mysqli_error($con));
         }
@@ -167,6 +166,7 @@
             echo "Fill Requied Fields";
         }
            }
+                  
         ?>
                 </table>
             </center>
