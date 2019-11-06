@@ -25,7 +25,7 @@ include "includes/login.php";
                 <form class="form" action="" method="post">
                     <div class="form-group">
                         <h5 class="text-white">Username</h5>
-                        <input type="email" class="form-control" name="user_name" placeholder="Type your username" required="">
+                        <input type="text" class="form-control" name="user_name" placeholder="Type your username" required="">
                     </div>
                     <div class="form-group">
                         <h5 class="text-white">Password</h5>
