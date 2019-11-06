@@ -15,6 +15,7 @@
 		  $user_role = $row['user_role'];
           $user_gender = $row['user_gender'];
           $user_tp = $row['user_tp'];
+            
         }
         
         if(isset($_POST['submit'])){
@@ -28,7 +29,7 @@
         $user_tp = $row['user_tp'];
 		
 
-		$query = "UPDATE users set user_name = '{$user_name}',user_password = '{$user_password}',user_fname = '{$user_fname}',user_lname = '{$user_lname}',user_role = '{$user_role}',user_gender = '{$user_gender}',user_tp = '{$user_tp}',user_gender = '{$user_gender}',user_role = '{$user_role}' WHERE user_name = '{$name}'";
+		$query = "UPDATE users set user_name = '{$user_name}',user_password = '".md5($user_password)."',user_fname = '{$user_fname}',user_lname = '{$user_lname}',user_role = '{$user_role}',user_gender = '{$user_gender}',user_tp = '{$user_tp}',user_gender = '{$user_gender}',user_role = '{$user_role}' WHERE user_name = '{$name}'";
 								
 								$result = mysqli_query($con,$query);
 								
@@ -71,11 +72,7 @@
                 </div>
                 <div class="form-group">
                     <h5 class="text-white">Password</h5>
-                    <input class="form-control" type="password" name="user_password" value="<?php if(isset($user_password)){echo $user_password;}?>" id="pswd">
-                </div>
-                <div class="form-group">
-                    <button class="btn btn-primary btn-link btn-wd btn-lg bg-blue-gradient text-white nounderline" style="width:100%;" onclick="shwpswd()" type="button">Show Password
-                    </button>
+                    <input class="form-control" type="password" name="user_password" value="<?php if(isset($user_password)){echo $user_password;}?>">
                 </div>
                 <!-- <div class="col-2">
                 <div class="input-group">
@@ -102,16 +99,6 @@
             </form>
         </div>
     </div>
-    <script>
-        function shwpswd() {
-          var x = document.getElementById("pswd");
-          if (x.type === "password") {
-            x.type = "text";
-          } else {
-            x.type = "password";
-          }
-        }
-    </script>
 </body>
 
 </html>
