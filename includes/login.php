@@ -26,7 +26,15 @@ require('db.php');
 function show(){
     global $error;
     if($error==100){
-    echo "<p style='color:black;''>*Username/Password Incorrect!!!</p>";
+    echo '<script type="text/javascript">';
+    echo 'swal({
+        title: "Incorrect Credentials",
+        text: "Login Failed Due to Incorrect Username and/or Password. Please Check and Try Again",
+        icon: "error",
+        dangerMode: true,
+        button: "Oh Shit Okay",
+        })';
+    echo ';</script>';
     }
 }
 ?>
