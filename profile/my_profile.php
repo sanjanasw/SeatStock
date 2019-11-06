@@ -71,10 +71,10 @@
                 </div>
                 <div class="form-group">
                     <h5 class="text-white">Password</h5>
-                    <input class="form-control" id="pswd" type="password" name="user_password" value="<?php if(isset($user_password)){echo $user_password;}?>">
+                    <input class="form-control" type="password" name="user_password" value="<?php if(isset($user_password)){echo $user_password;}?>" id="pswd">
                 </div>
                 <div class="form-group">
-                    <button class="btn btn-primary btn-link btn-wd btn-lg bg-blue-gradient text-white nounderline" style="width:100%;" onclick="shwpswd()">Show Password
+                    <button class="btn btn-primary btn-link btn-wd btn-lg bg-blue-gradient text-white nounderline" style="width:100%;" onclick="shwpswd()" type="button">Show Password
                     </button>
                 </div>
                 <!-- <div class="col-2">

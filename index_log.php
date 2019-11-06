@@ -27,12 +27,16 @@ include "includes/login.php";
                         <h5 class="text-white">Username</h5>
                         <input type="text" class="form-control" name="user_name" placeholder="Type your username" required="">
                     </div>
-                    <div class="form-group">
-                        <h5 class="text-white">Password</h5>
-                        <input class="form-control" type="password" name="user_password" placeholder="Type your password" required="">
-                    </div>
                     <div>
                         <span class="mt-5"><?php show();?></span>
+                    </div>
+                    <div class="form-group">
+                        <h5 class="text-white">Password</h5>
+                        <input class="form-control" id="pswd" type="password" name="user_password" placeholder="Type your password" required="">
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary btn-link btn-wd btn-lg bg-blue-gradient text-white nounderline" style="width:100%;" onclick="shwpswd()" type="button">Show Password
+                        </button>
                     </div>
                     <div class="form-group">
                         <button class="btn btn-primary btn-link btn-wd btn-lg bg-blue-gradient text-white nounderline" style="width:100%;" name="submit" type="submit">Login
@@ -48,5 +52,15 @@ include "includes/login.php";
             </div>
             <!--<img class="card-img-top mt-3" style="max-height: 6rem;" src="images/svg/sign in.svg" alt="">-->
     </div>
+    <script>
+        function shwpswd() {
+          var x = document.getElementById("pswd");
+          if (x.type === "password") {
+            x.type = "text";
+          } else {
+            x.type = "password";
+          }
+        }
+    </script>
 </body>
 </html>
