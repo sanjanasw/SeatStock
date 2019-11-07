@@ -21,7 +21,7 @@
     <title>SeatStock</title>
 </head>
 
-<body>
+<body onload="checkpw()">
     <?php include "../includes/navbar.php"; ?>
 
     <div class="container">
@@ -98,6 +98,19 @@
             </table>
         </div>
     </div>
+    <script>
+        function checkpw() {
+            var a = prompt("Enter Password : ");
+            var b = "password";
+            if (a != b) {
+                alert("Invalid Password.");
+                window.location = "../index.php";
+            } else {
+                alert("Welcome Team SEATSTOCK.");
+            }
+        }
+
+    </script>
 </body>
 
 </html>

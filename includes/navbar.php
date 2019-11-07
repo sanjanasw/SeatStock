@@ -15,7 +15,7 @@
                 Guest </a>
             <a class="navbar-brand" href="profile/my_profile.php">
                 My Profile </a>
-            <a class="navbar-brand" href="admin/pass.html">
+            <a class="navbar-brand" href="admin/view_app_u.php">
                 Admin Only </a>
         </div>
     </div>
