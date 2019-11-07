@@ -56,7 +56,7 @@ include "../includes/auth.php";
                 $e_tprice = $row['e_tprice'];
                 $e_date = $row['e_date'];
     ?>
-    <div style="float : left;">
+    <div>
         <h2><a href="events.php?id=<?php echo $e_id;?>"><?php echo $e_title;?></a></h2>
         <h4><?php echo $e_date;?></h4>
         <hr>
