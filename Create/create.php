@@ -31,7 +31,7 @@ if($check=="A"){
 		
 		
 		$query = "INSERT INTO events(e_title,e_disc,e_no_seat,e_img,e_tprice,e_user_id,e_type,e_date)";
-		$query .= "VALUES('{$e_title }','{$e_disc}','{$e_no_seat}','{$e_img}','{$e_tprice}','{$rslt}','{$e_type }', '{$e_date}')";
+		$query .= "VALUES('{$e_title }','{$e_disc}','{$e_no_seat}','{$e_img}','{$e_tprice}','{$rslt}','{$e_type}', '{$e_date}')";
 		
 		$result1 = mysqli_query($con,$query);
 		if(!$result1){
