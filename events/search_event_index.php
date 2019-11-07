@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -38,15 +39,7 @@ include "../includes/auth.php";
 
     <?php
         }else{
-            while($row = mysqli_fetch_assoc($result)){
-                $e_id = $row['e_id'];				
-                $e_title = $row['e_title'];
-                $e_img = $row['e_img'];
-                $e_tprice = $row['e_tprice'];
-                $e_date = $row['e_date'];
-            }
-?>
-    <!DOCTYPE html>
+    ?>
     <H1 style="color:Blue;">Welcome <?php echo $_SESSION['username']; ?>!</H1>
     <br>
     <form action="../events/search_event_index.php" method="post">
@@ -55,6 +48,14 @@ include "../includes/auth.php";
         <input type="submit" name="submit">
     </form>
     <br><br>
+    <?php
+            while($row = mysqli_fetch_assoc($result)){
+                $e_id = $row['e_id'];				
+                $e_title = $row['e_title'];
+                $e_img = $row['e_img'];
+                $e_tprice = $row['e_tprice'];
+                $e_date = $row['e_date'];
+    ?>
     <div style="float : left;">
         <h2><a href="events.php?id=<?php echo $e_id;?>"><?php echo $e_title;?></a></h2>
         <h4><?php echo $e_date;?></h4>
@@ -65,7 +66,7 @@ include "../includes/auth.php";
         <a class="btn btn-primary" href="events.php?id=<?php echo $e_id;?>">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
         <hr>
     </div>
-    <?php } }?>
+    <?php } } }?>
 
 </body>
 
