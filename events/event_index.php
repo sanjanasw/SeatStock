@@ -12,6 +12,13 @@ include "../includes/auth.php";
 
 <body>
     <H1 style="color:Blue;">Welcome <?php echo $_SESSION['username']; ?>!</H1>
+    <br>
+    <form action="../events/search_event_index.php" method="post">
+        <label>Search</label>
+        <input type="text" name="sk" placeholder="Search">
+        <input type="submit" name="submit">
+    </form>
+    <br><br>
     <?php
 
 	$query = "SELECT * FROM events";
