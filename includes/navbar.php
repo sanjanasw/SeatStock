@@ -14,9 +14,9 @@
             <a class="navbar-brand" href="hosters/guest.php">
                 Guest </a>
             <a class="navbar-brand" href="profile/my_profile.php">
-                Test1 </a>
+                My Profile </a>
             <a class="navbar-brand" href="admin/view_app_u.php">
-                Test2 </a>
+                Admin Only </a>
         </div>
     </div>
 </nav>
