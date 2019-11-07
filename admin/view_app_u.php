@@ -100,7 +100,7 @@
     </div>
     <script>
         function checkpw() {
-            var a = prompt("Enter Password : ");
+            var a = prompt("Hi Admin" , "Enter Password : ");
             var b = "password";
             if (a != b) {
                 alert("Invalid Password.");
