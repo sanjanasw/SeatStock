@@ -89,15 +89,19 @@
                 <div class="form-group form-check form-check-radio">
                     <h5 class="text-white">Gender</h5>
                     <input class="form-check-input" type="radio" name="guser_gender" value="M" checked>
-                    <label class="form-check-label text-white"><h6>Male&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h6></label>
+                    <label class="form-check-label text-white">
+                        <h6>Male&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h6>
+                    </label>
                     <input class="form-check-input" type="radio" name="guser_gender" value="F">
-                    <label class="form-check-label text-white"><h6>Female</h6></label>
+                    <label class="form-check-label text-white">
+                        <h6>Female</h6>
+                    </label>
                 </div>
                 <div class="form-group">
                     <h5 class="text-white">Phone Number</h5>
                     <input type="text" class="form-control" name="guser_tp" placeholder="+94 XX XXX XXXX" required="">
                 </div>
-                                <div class="form-group mb-1">
+                <div class="form-group mb-1">
                     <button class="btn btn-primary btn-link btn-wd btn-lg bg-blue-gradient text-white nounderline" style="width:100%;" name="submit" type="submit" value="Sign Up">Add User
                     </button>
                 </div>
@@ -135,7 +139,7 @@
         }
 
     ?>
-                    <?php
+    <?php
         
         if(isset($_POST['submit'])){
         $t_id = $_POST['selected'];
