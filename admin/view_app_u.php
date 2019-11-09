@@ -32,26 +32,28 @@
 <body onload="checkpw()">
 
     <div class="card shadow-lg p-3 mb-5 bg-white rounded-lg text-center" style="max-width: 70rem;">
-       
-        <button class="btn btn-primary p-3 mb-3  btn-link btn-wd btn-lg bg-redish-gradient btn-outline-danger text-white nounderline" style="width:100%;"  onclick="home()"><h1>Admin Panel</h1></button>
-        
+
+        <button class="btn btn-primary p-3 mb-3  btn-link btn-wd btn-lg bg-redish-gradient btn-outline-danger text-white nounderline" style="width:100%;" onclick="home()">
+            <h1>Admin Panel</h1>
+        </button>
+
         <div class="container shadow-lg p-2 mb-3 bg-blue-gradient rounded-lg" style="max-width: 68rem;">
             <h1 class="text-center text-white">Users</h1>
         </div>
         <div class="container shadow-lg p-3 mb-3 bg-redish-gradient rounded-lg" style="max-width: 68rem;">
-           <center>
-            <table class="table-danger table-hover">
-                <tr class="table-warning">
-                    <th>User Id</th>
-                    <th>User Name</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Gender</th>
-                    <th>Contact Number</th>
-                    <th>Role</th>
-                    <th>Registered Date & Time</th>
-                </tr>
-                <?php
+            <center>
+                <table class="table-danger table-hover">
+                    <tr class="table-warning">
+                        <th>User Id</th>
+                        <th>User Name</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Gender</th>
+                        <th>Contact Number</th>
+                        <th>Role</th>
+                        <th>Registered Date & Time</th>
+                    </tr>
+                    <?php
     while($row = mysqli_fetch_assoc($result)){
         $u0 = $row['user_id'];
         $u1 = $row['user_name'];
@@ -77,23 +79,23 @@
         echo "</tr>";
     }
     ?>
-            </table>
+                </table>
             </center>
         </div>
         <div class="container shadow-lg p-2 mb-3 bg-blue-gradient rounded-lg" style="max-width: 68rem;">
             <h1 class="text-center text-white">Events</h1>
         </div>
         <div class="container shadow-lg p-3 bg-redish-gradient rounded-lg" style="max-width: 68rem;">
-           <center>
-            <table class="table-danger table-hover">
-                <tr class='table-warning'>
-                    <th>Event Id</th>
-                    <th>Event Title</th>
-                    <th>Hosters User Id</th>
-                    <th>Event Type</th>
-                    <th>Event Date</th>
-                </tr>
-                <?php
+            <center>
+                <table class="table-danger table-hover">
+                    <tr class='table-warning'>
+                        <th>Event Id</th>
+                        <th>Event Title</th>
+                        <th>Hosters User Id</th>
+                        <th>Event Type</th>
+                        <th>Event Date</th>
+                    </tr>
+                    <?php
     while($row1 = mysqli_fetch_assoc($result1)){
         $u1 = $row1['e_id'];
         $u2 = $row1['e_title'];
@@ -110,19 +112,36 @@
         echo "</tr>";
     }
     ?>
-            </table>
+                </table>
             </center>
         </div>
     </div>
     <script>
         function checkpw() {
+
             var a = prompt("Hi Admin", "Enter Password : ");
             var b = "password";
             if (a != b) {
-                alert("Invalid Password.");
+                swal({
+                    title: "Incorrect Credentials",
+                    text: "Login Failed Due to Incorrect Password. Please Check and Try Again",
+                    icon: "error",
+                    dangerMode: true,
+                    button: "Oh Shit Okay"
+                })
                 window.location = "../index.php";
             } else {
-                alert("Welcome Team SEATSTOCK.");
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 3000
+                })
+
+                Toast.fire({
+                    icon: 'success',
+                    title: 'Signed in successfully'
+                })
             }
         }
 
