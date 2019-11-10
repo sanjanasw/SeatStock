@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://github.com/sanjana-s99/SeatStock/blob/master/seatstocklogo.png" alt="SeatStock"/>
+    <img src="https://github.com/sanjana-s99/SeatStock/blob/master/SeatStockLogo.svg" alt="SeatStock" width="120px"/>
 </p>
 <h1 align="center">SeatStock</h1>
 <p align="center">
