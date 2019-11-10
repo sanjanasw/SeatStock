@@ -19,10 +19,10 @@ include "includes/login.php";
     <?php include "includes/navbar.php"; ?>
     <?php show();?>
     <div class="card shadow-lg p-3 mb-5 bg-white rounded-lg text-center" style="max-width: 30rem;">
-            <div class="container shadow-lg p-2 mb-3 bg-blue-gradient rounded-lg" style="max-width: 28rem;">
+            <div class="container p-2 mb-3 bg-blue-gradient rounded-lg" style="max-width: 28rem;">
                     <h3 class="text-white">LOGIN</h3>
             </div>
-            <div class="container shadow-lg p-3 bg-redish-gradient rounded-lg" style="max-width: 28rem;">
+            <div class="container p-3 bg-redish-gradient rounded-lg" style="max-width: 28rem;">
                 <form class="form" action="" method="post">
                     <div class="form-group">
                         <h5 class="text-white">Username</h5>
