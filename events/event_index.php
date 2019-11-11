@@ -22,7 +22,7 @@ include "../includes/auth.php";
         <div class="container p-3 rounded-lg" style="max-width: 28rem;">
         <form action="../events/search_event_index.php" method="post">
             <input class="form-control mb-2" type="text" name="sk" placeholder="Type here">
-            <button class="btn btn-primary btn-link btn-wd btn-lg bg-blue-gradient text-white nounderline" style="width:100%;" name="submit" type="submit">Search</button>
+            <button class="btn btn-primary btn-link btn-wd btn-lg bg-blue-gradient text-white nounderline" style="width:100%;" name="submit" type="submit">SEARCH</button>
         </form>
         </div>
     </div>
@@ -44,7 +44,7 @@ include "../includes/auth.php";
             <h4 class=" nounderline text-uppercase pt-2"><a href="events.php?id=<?php echo $e_id;?>"><?php echo $e_title;?></a></h4>
             <h6 class=""><?php echo $e_date;?></h6>
             <p>Rs: <?php echo $e_tprice;?></p>
-            <a href="events.php?id=<?php echo $e_id;?>" class="btn btn-primary btn-link btn-wd btn-lg bg-blue-gradient text-white nounderline" style="width:100%;">BOOK NOW</a>
+            <a href="events.php?id=<?php echo $e_id;?>" class="btn btn-primary btn-link btn-wd btn-lg bg-blue-gradient text-white nounderline" style="width:100%;">RESERVE NOW</a>
         </div>
     </div>
     <?php } ?>

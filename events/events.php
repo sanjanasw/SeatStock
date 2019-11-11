@@ -59,51 +59,71 @@ $query = "SELECT user_id FROM users WHERE user_name = '$name'";
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon/SeatStockLogoFavicon3232.png">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+    <script src="../bootstrap/js/bootstrap.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/eee0ff9583.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <title>SeatStock <?php echo $e_title; ?></title>
 </head>
-
 <body>
-    <h1><?php echo $e_title; ?></h1>
-    <p> by <?php echo $user_name; ?></p>
-    <h4><?php echo $e_date;?></h4>
-    <hr>
-    <img src="../images/event_img/<?php echo $e_img?>" alt="">
-    <hr>
-    <p> <?php echo $e_disc; ?></p>
-    <p> Seats : <?php echo $e_no_seat; ?></p>
-    <p> Price : Rs <?php echo $e_tprice; ?></p>
-    <h4>Contact Us For More Details</h4>
-    <p> Email : <?php echo $user_email; ?></p>
-    <p> Hotline : <?php echo $user_tp; ?></p>
-    <?php }}} ?>
-
-    <hr>
-    <h3>Select Seat Number And Resave.</h3>
-    <form action="" method="post" enctype="multipart/form-data">
-        <div class="form-group">
-            <label>Seat Number</label>
-            <select name="selected">
-                <?php
-					$query = "SELECT * FROM A$rslt1";
-					$rslt = mysqli_query($con,$query);
-					while($row = mysqli_fetch_assoc($rslt)){
-						$t_id = $row['t_id'];
-                        $user_id = $row['user_id'];
-				
-				    if($user_id==0){
-                        echo"<option value='{$t_id}'>Seat No: $t_id</option>";
-                    }
-				
-					}
-				?>
-            </select>
+    <div class="container mt-5 shadow p-3 mb-5 bg-white rounded-lg text-center" style="max-width: 30rem;">
+        <div class="container p-1 mb-1 bg-blue-gradient rounded-lg" style="max-width: 28rem;">
+            <h3 class="text-white"><?php echo $e_title; ?></h3>
         </div>
-        <input type="submit" name="submit" class="btn btn-primary" value="Resave">
-    </form>
-
+        <p>hosted by <?php echo $user_name; ?></p>
+        <div class="img">
+            <img src="../images/event_img/<?php echo $e_img?>" alt="" style="border-radius:40px;">
+        </div>
+        <div>
+            <h4><?php echo $e_date;?></h4>
+        </div>
+        <div>
+            <p> <?php echo $e_disc; ?></p>
+        </div>
+        <div>
+            <h4>Available seats : <?php echo $e_no_seat; ?></h4>
+        </div>
+        <div>
+            <h4>Price per seat : Rs <?php echo $e_tprice; ?></h4>
+        </div>
+        <div class="container p-3 bg-redish-gradient rounded-lg text-white" style="max-width: 28rem;">
+            <h3>RESERVE HERE</h3>
+            <form action="" method="post">
+                <div class="form-group">
+                    <h5>Select your seat</h5>
+                    <select name="selected">
+                        <?php
+		        			$query = "SELECT * FROM A$rslt1";
+		        			$rslt = mysqli_query($con,$query);
+		        			while($row = mysqli_fetch_assoc($rslt)){
+		        				$t_id = $row['t_id'];
+                                $user_id = $row['user_id'];
+                            
+		        		    if($user_id==0){
+                                echo"<option value='{$t_id}'>Seat No: $t_id</option>";
+                            }
+                        
+		        			}
+		        		?>
+                    </select>
+                </div>
+                <div class="form-group mb-1">
+                    <button class="btn btn-primary btn-link btn-wd btn-lg bg-blue-gradient text-white nounderline" style="width:100%;" name="submit" type="submit" value="Resave">RESERVE</button>
+                </div>
+            </form>
+        </div>
+        <div class="mt-3">
+            <h6>Contact Host For More Details</h6>
+            <p> Email : <?php echo $user_email; ?></p>
+            <p> Telephone : <?php echo $user_tp; ?></p>
+        </div>
+    </div>
+<?php }}} ?>
 </body>
-
 </html>
