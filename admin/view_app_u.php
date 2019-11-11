@@ -127,20 +127,16 @@
                     text: "Login Failed Due to Incorrect Password. Please Check and Try Again",
                     icon: "error",
                     dangerMode: true,
-                    button: "Oh Shit Okay"
+                    button: "Oh Shit Okay",
                 })
                 window.location = "../index.php";
             } else {
-                const Toast = Swal.mixin({
-                    toast: true,
-                    position: 'top-end',
-                    showConfirmButton: false,
-                    timer: 3000
-                })
-
-                Toast.fire({
-                    icon: 'success',
-                    title: 'Signed in successfully'
+                swal({
+                    title: "All Done",
+                    text: "Welcome!! Team Seatstock",
+                    icon: "success",
+                    dangerMode: false,
+                    button: "Okay"
                 })
             }
         }
