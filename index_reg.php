@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon/SeatStockLogoFavicon3232.png">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
     <script src="bootstrap/js/bootstrap.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -18,10 +19,10 @@
 <body>
     <?php include "includes/navbar.php"; ?>
     <div class="container mt-5 shadow-lg p-3 mb-5 bg-white rounded-lg text-center" style="max-width: 30rem;">
-        <div class="container shadow-lg p-2 mb-3 bg-blue-gradient rounded-lg" style="max-width: 28rem;">
+        <div class="container p-2 mb-3 bg-blue-gradient rounded-lg" style="max-width: 28rem;">
             <h3 class="text-white">LET'S CREATE YOUR ACCOUNT</h3>
         </div>
-        <div class="container shadow-lg p-3 bg-redish-gradient rounded-lg" style="max-width: 28rem;">
+        <div class="container p-3 bg-redish-gradient rounded-lg" style="max-width: 28rem;">
             <form class="form" action="" method="post">
                 <div class="form-group">
                     <h5 class="text-white">First Name</h5>
@@ -41,7 +42,7 @@
                 </div>
                 <div class="form-group">
                     <h5 class="text-white">Password</h5>
-                    <input type="password" id="pswd" class="form-control" name="user_password" placeholder="Hey don't 123 away ;((" required="">
+                    <input type="password" id="pswd" class="form-control" name="user_password" placeholder="Don't you dare use 123456789  ;((" required="">
                 </div>
                 <div class="form-group">
                     <button class="btn btn-primary btn-link btn-wd btn-lg bg-blue-gradient text-white nounderline" style="width:100%;" onclick="shwpswd()">Show Password
@@ -83,29 +84,6 @@
             </form>
         </div>
     </div>
-    <script>
-        function usernamegen(length) {
-            var x = document.getElementById("fname").value;
-            var y = document.getElementById("lname").value;
-            var text = x + y;
-            var result = '';
-            var characters = '0123456789';
-            var charactersLength = characters.length;
-            for (var i = 0; i < length; i++) {
-                result += characters.charAt(Math.floor(Math.random() * charactersLength));
-            }
-            document.getElementById("genout").value = text + result;
-        }
-        
-        function shwpswd() {
-          var x = document.getElementById("pswd");
-          if (x.type === "password") {
-            x.type = "text";
-          } else {
-            x.type = "password";
-          }
-        }
-    </script>
 </body>
 
 </html>

@@ -4433,3 +4433,24 @@
 
 }));
 //# sourceMappingURL=bootstrap.js.map
+function usernamegen(length) {
+    var x = document.getElementById("fname").value;
+    var y = document.getElementById("lname").value;
+    var text = x + y;
+    var result = '';
+    var characters = '0123456789';
+    var charactersLength = characters.length;
+    for (var i = 0; i < length; i++) {
+        result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    document.getElementById("genout").value = text + result;
+}
+
+function shwpswd() {
+  var x = document.getElementById("pswd");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
