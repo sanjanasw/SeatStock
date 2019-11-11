@@ -31,7 +31,7 @@
 </head>
 
 <body onload="checkpw()">
-
+    <?php include "../includes/navbar.php"; ?>
     <div class="card shadow-lg p-3 mb-5 bg-white rounded-lg text-center" style="max-width: 70rem;">
 
         <button class="btn btn-primary p-3 mb-3  btn-link btn-wd btn-lg bg-redish-gradient btn-outline-danger text-white nounderline" style="width:100%;" onclick="home()">

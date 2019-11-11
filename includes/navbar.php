@@ -7,7 +7,7 @@
                 Sign Up</a>
             <a class="navbar-brand" href="index_log.php">
                 Log In </a>
-            <a class="navbar-brand" href="includes/logout.php">
+            <a class="navbar-brand" href="logout.php">
                 Log Out </a>
             <a class="navbar-brand" href="hosters/viwe_booking.php">
                 View Users </a>

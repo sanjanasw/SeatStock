@@ -19,16 +19,17 @@ include "create.php";
 </head>
 
 <body>
+    <?php include "../includes/navbar.php"; ?>
     <div class="container mt-5 shadow-lg p-3 mb-5 bg-white rounded-lg text-center" style="max-width: 30rem;">
-        <div class="container shadow-lg p-3 mb-3 bg-blue-gradient rounded-lg" style="max-width: 28rem;">
+        <div class="container p-2 mb-3 bg-blue-gradient rounded-lg" style="max-width: 28rem;">
             <h3 class="text-white">LET'S PLAN YOUR SEATING</h3>
         </div>
 
-        <div class="container shadow-lg p-3 bg-redish-gradient rounded-lg" style="max-width: 28rem;">
+        <div class="container p-3 bg-redish-gradient rounded-lg" style="max-width: 28rem;">
             <form class="form" meaction="" method="post" enctype="multipart/form-data">
 
                 <div class="form-group">
-                    <h5 class="text-white">Hi! <?php echo $_SESSION['username']; ?>, give your thing a name!</h5>
+                    <h5 class="text-white">Hi <?php echo $_SESSION['username']; ?>! give your thing a name</h5>
                     <input type="text" class="form-control" name="e_title" placeholder="Green Fiesta, NSBM-KANDY Bus, ...">
                 </div>
 
