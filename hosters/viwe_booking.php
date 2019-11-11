@@ -32,7 +32,6 @@
 
 <body>
     <?php include "../includes/navbar.php"; ?>
-
     <div class="card shadow-lg p-3 mb-5 bg-white rounded-lg text-center" style="max-width: 50rem;">
         <div class="container shadow-lg p-2 mb-3 bg-blue-gradient rounded-lg" style="max-width: 48rem;">
             <form action="" method="post" enctype="multipart/form-data">
