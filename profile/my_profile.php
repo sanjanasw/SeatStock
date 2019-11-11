@@ -67,11 +67,10 @@
 
 <body>
     <div class="container mt-5 shadow-lg p-3 mb-5 bg-white rounded-lg text-center" style="max-width: 30rem;">
-        <div class="container shadow-lg p-2 mb-3 bg-blue-gradient rounded-lg" style="max-width: 28rem;">
-            <h3 class="text-white">HI!! <?php echo $name ?>. </h3>
+        <div class="container p-2 mb-3 bg-blue-gradient rounded-lg" style="max-width: 28rem;">
             <h4 class="text-white">EDIT YOUR ACCOUNT DETAILS</h4>
         </div>
-        <div class="container shadow-lg p-3 bg-redish-gradient rounded-lg" style="max-width: 28rem;">
+        <div class="container p-3 bg-redish-gradient rounded-lg" style="max-width: 28rem;">
             <form method="POST" action="">
                 <div class="form-group">
                     <h5 class="text-white">First Name</h5>
