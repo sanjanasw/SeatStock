@@ -10071,8 +10071,7 @@ html, body {
 }
 
 select{
-  background: linear-gradient(220.18deg, #0025E9 0%, #4800E0 100%); !important;
-  color: #fff !important;
+  background-color: DodgerBlue;
 }
 option:not(:checked) { 
   background: linear-gradient(220.18deg, #0025E9 0%, #4800E0 100%); !important;
