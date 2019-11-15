@@ -18,6 +18,7 @@ include "../includes/auth.php";
     <title>SeatStock Find Event</title>
 </head>
 <body>
+<?php include "../includes/navbar.php"; ?>
     <div class="container mt-5 shadow p-3 bg-white rounded-lg text-center" style="max-width: 30rem;">
         <div class="container p-3 rounded-lg" style="max-width: 28rem;">
         <form action="../events/search_event_index.php" method="post">
