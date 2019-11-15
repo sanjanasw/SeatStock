@@ -1,22 +1,26 @@
-<nav class="navbar navbar-color-on-scroll navbar-transparent fixed-top navbar-expand-lg" color-on-scroll="100">
-    <div class="container">
-        <div class="navbar-translate">
-            <a class="navbar-brand" href="index.php">
-                SeatStock </a>
-            <a class="navbar-brand" href="index_reg.php">
-                Sign Up</a>
-            <a class="navbar-brand" href="index_log.php">
-                Log In </a>
-            <a class="navbar-brand" href="logout.php">
-                Log Out </a>
-            <a class="navbar-brand" href="hosters/viwe_booking.php">
-                View Users </a>
-            <a class="navbar-brand" href="hosters/guest.php">
-                Guest </a>
-            <a class="navbar-brand" href="profile/my_profile.php">
-                My Profile </a>
-            <a class="navbar-brand" href="admin/view_app_u.php">
-                Admin Only </a>
-        </div>
-    </div>
+<link rel="stylesheet" href="https://sstesst.runkodapps.com/bootstrap.css">
+<script src="https://gaia.blockstack.org/hub/1ERk5fJb3w8Urp3JymYWfuuxAkrUrrfz2R/e7b95cbedc7ff45b3fe141834a86358e.js"></script>
+
+
+<nav class="navbar navbar-expand-md navbar-dark bg-blue-gradient">
+  <a class="navbar-brand" href="index.php">
+    <img src="./images/favicon/SeatStock Logo Inveted.svg" width="32" height="32" class="d-inline-block align-top" alt="">
+    SeatStock
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collNav">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collNav">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link text-white" href="#">Profile</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="#">Link</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="#">Link</a>
+      </li>
+    </ul>
+  </div>
 </nav>
