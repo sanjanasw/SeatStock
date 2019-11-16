@@ -6,8 +6,8 @@ if ( isset( $_SESSION['username'] ) )
     $name = $_SESSION['username'];
 ?>
 <nav class="navbar navbar-expand-md navbar-dark bg-blue-gradient">
-  <a class="navbar-brand" href="../index.php">
-    <img src="../images/favicon/SeatStock Logo Inveted.svg" width="32" height="32" class="d-inline-block align-top" alt="">
+  <a class="navbar-brand" href="index.php">
+    <img src="./images/favicon/SeatStock Logo Inveted.svg" width="32" height="32" class="d-inline-block align-top" alt="">
     SeatStock
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collNav">
