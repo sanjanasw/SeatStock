@@ -1,19 +1,19 @@
 <link rel="stylesheet" href="https://sstesst.runkodapps.com/bootstrap.css">
 <script src="https://gaia.blockstack.org/hub/1ERk5fJb3w8Urp3JymYWfuuxAkrUrrfz2R/e7b95cbedc7ff45b3fe141834a86358e.js"></script>
-<?php
-if ( isset( $_SESSION['username'] ) )
-{
-    $name = $_SESSION['username'];
-?>
+
+
 <nav class="navbar navbar-expand-md navbar-dark bg-blue-gradient">
-  <a class="navbar-brand" href="../index.php">
-    <img src="../images/favicon/SeatStock Logo Inveted.svg" width="32" height="32" class="d-inline-block align-top" alt="">
+  <a class="navbar-brand" href="index.php">
+    <img src="./images/favicon/SeatStock Logo Inveted.svg" width="32" height="32" class="d-inline-block align-top" alt="">
     SeatStock
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collNav">
     <span class="navbar-toggler-icon"></span>
   </button>
-
+<?php
+if ( isset( $_SESSION['username'] ) )
+{
+?>
   <div class="collapse navbar-collapse" id="collNav">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item dropdown">
@@ -21,8 +21,6 @@ if ( isset( $_SESSION['username'] ) )
           Profile
         </a>
         <div class="dropdown-menu text-white bg-blue-gradient" aria-labelledby="drop1">
-          <p class="dropdown-item text-white bg-blue-gradient">HI, <?php echo $name ?></p>
-          <hr>
           <a class="dropdown-item text-white bg-blue-gradient" href="#">Edit Profile</a>
           <a class="dropdown-item text-white bg-blue-gradient" href="#">My Bookings</a>
           <a class="dropdown-item text-white bg-blue-gradient" href="#">My Events</a>
