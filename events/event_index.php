@@ -69,18 +69,20 @@ include "../includes/auth.php";
         </div>
     </div>
     <?php } ?>
+           <div class="container mt-5 shadow p-1 bg-white rounded-lg" style="max-width: 30rem;">
             <hr>
-        <ul class="pager">
+        <ul class="pagination">
         <?php
             for($i=1;$i<= $count; $i++){
                 
                 if($i == $page){
-                    echo "<li><a class='active' href='event_index.php?page={$i}'>{$i}</a></li>";
+                    echo "<li><a class='active' href='event_index.php?page={$i}'>{$i}&nbsp</a></li>";
                 }else{
-                    echo "<li><a href='event_index.php?page={$i}'>{$i}</a></li>";
+                    echo "<li><a href='event_index.php?page={$i}'>{$i}&nbsp</a></li>";
                 }
             }
         ?>
            </ul>
+    </div>
 </body>
 </html>
