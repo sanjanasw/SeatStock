@@ -83,7 +83,7 @@
                 </div>
                 <div class="form-group">
                     <h5 class="text-white">Password</h5>
-                    <input class="form-control" type="text" name="user_password" value="<?php if(isset($user_password)){echo $user_password;}?>">
+                    <input class="form-control" type="password" name="user_password" value="<?php if(isset($user_password)){echo $user_password;}?>">
                 </div>
                 <!-- <div class="col-2">
                 <div class="input-group">

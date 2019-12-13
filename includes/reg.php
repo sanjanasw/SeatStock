@@ -17,7 +17,7 @@ if (isset($_REQUEST['user_name'])){
         $query = "INSERT into `users` (user_name, user_password, user_fname, user_lname, user_email, user_gender, user_tp, user_role, trn_date) VALUES ('$user_name', '".md5($user_password)."','$user_fname','$user_lname' , '$user_email', '$user_gender','$user_tp','$user_role', '$trn_date')";
         $result = mysqli_query($con,$query);
         if($result){
-            header ("Location: index_log.php");//after registering rederectin to login page
+            header ("Location: index_log.php");
         }
     }else{}
 ?>
