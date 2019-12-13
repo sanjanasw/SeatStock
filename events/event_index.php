@@ -29,7 +29,27 @@ include "../includes/auth.php";
     </div>
     <?php
 	$query = "SELECT * FROM events";
-    $select_all_events = mysqli_query($con,$query);
+    $result = mysqli_query($con, $query);
+        if(!$result){
+            die("FAILD!!".mysqli_error());
+        }else{
+            $count = mysqli_num_rows($result);
+            $count = ceil($count/5);
+        }
+        if(isset($_GET['page'])){
+            $page=$_GET['page'];
+        }else{
+           $page="";
+        }
+          
+        if($page=="" || $page == 1){
+           $page_1=0;
+        }else{
+           $page_1=($page*5)-5;
+        }
+    
+    $query_r = "SELECT * FROM events LIMIT {$page_1},5";
+    $select_all_events = mysqli_query($con,$query_r);
     while($row = mysqli_fetch_assoc($select_all_events)){
 		$e_id = $row['e_id'];
         $e_title = $row['e_title'];
@@ -49,5 +69,18 @@ include "../includes/auth.php";
         </div>
     </div>
     <?php } ?>
+            <hr>
+        <ul class="pager">
+        <?php
+            for($i=1;$i<= $count; $i++){
+                
+                if($i == $page){
+                    echo "<li><a class='active' href='event_index.php?page={$i}'>{$i}</a></li>";
+                }else{
+                    echo "<li><a href='event_index.php?page={$i}'>{$i}</a></li>";
+                }
+            }
+        ?>
+           </ul>
 </body>
 </html>
