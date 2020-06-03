@@ -8,7 +8,9 @@
 <body>
 <body>
 <div class="container-fluid">
-			<?php
+			
+            <?php
+            $error="";
 include('db.php');
 if (isset($_GET["key"]) && isset($_GET["email"])
 && isset($_GET["action"]) && ($_GET["action"]=="reset")
@@ -23,7 +25,7 @@ if ($row==""){
 $error .= '<img class="mx-auto d-block mt-2 mb-2" src="../images/invalid.svg" style="max-width:400px;width:100%;"><h2 class="mx-auto d-block" >Invalid Link</h2>
 <h5  class="text-center" >The link is invalid/expired. Either you did not copy the correct link from the email, 
 or you have already used the key in which case it is deactivated.</h5>
-<h5   class="text-center"><a href="https://www.weuse.work/pages/forgetpass.php">Click here to reset password.</a></h5>';
+<h5   class="text-center"><a href="https://www.seatstock.lk/includes/forgetpass.php">Click here to reset password.</a></h5>';
 	}else{
 	$row = mysqli_fetch_assoc($query);
 	$expDate = $row['expDate'];
@@ -31,24 +33,24 @@ or you have already used the key in which case it is deactivated.</h5>
 	?>
 
 
-<form   class="mx-auto d-block" method="post" action="" name="update" class="mb-5">
+<form method="post" action="" name="update" class="mb-5">
 		<input type="hidden" name="action" value="update" />
 
 		<p  class="mx-auto d-block">Enter New Password:</p>
-		<input type="password" name="pass1" id="forminput" class="mx-auto d-block  mb-3" placeholder="&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;" required />
+		<input type="password" name="pass1" id="forminput"  placeholder="&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;" required />
 
 		<p  class="mx-auto d-block">Re-Enter New Password:</p>
-		<input type="password" name="pass2" id="forminput" class="mx-auto d-block  mb-3" placeholder="&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;" required />
+		<input type="password" name="pass2" id="forminput" placeholder="&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;" required />
 
 		<input type="hidden" name="email" value="<?php echo $email;?>"/>
-    <input type="submit" name="submit" value="⟳ RESET PASSWORD" class="mx-auto d-block mb-3" id="button"/>
+    <input type="submit" name="submit" value="⟳ RESET PASSWORD" id="button"/>
 	</form>
 
 <?php
 }else{
 $error .= '<img class="mx-auto d-block mt-2 mb-2" src="../images/timeout.svg" style="max-width:400px;width:100%;"><h2 class="mx-auto d-block" >Expired Link</h2>
 <h5  class="text-center" >The link is expired. You are trying to use the expired link which was valid for only 24 hours (1 days after request).</h5>
-<h5   class="text-center"><a href="https://www.weuse.work/pages/forgetpass.php">Click here to reset password.</a></h6>
+<h5   class="text-center"><a href="https://www.seatstock.lk/includes/forgetpass.php">Click here to reset password.</a></h6>
 ';
 				}
 		}
@@ -86,7 +88,7 @@ if ($pass1!=$pass2){
 		}else{
 
 mysqli_query($con,
-"UPDATE `users` SET `user_password`='.md5($pass1).', `user_regdate`='$curDate' WHERE `user_email`='$email';");	
+"UPDATE `users` SET `user_password`='".md5($pass1)."', `trn_date`='$curDate' WHERE `user_email`='$email';");	
 
 mysqli_query($con,"DELETE FROM `password_reset_temp` WHERE `email`='$email';");		
 	

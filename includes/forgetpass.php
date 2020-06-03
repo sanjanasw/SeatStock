@@ -10,7 +10,7 @@
 		<div class="row mt-4">
 			<div class="col-12 text-center">
 				<?php
-                $error;
+                $error = "";
 				include('db.php');
 				if(isset($_POST["email"]) && (!empty($_POST["email"]))){
 				$email = $_POST["email"];
@@ -39,6 +39,7 @@
                     $row1 = mysqli_fetch_assoc($results);
                     $user_name=$row1['user_name'];
 					if ($row==""){
+						//if email not in there
 						$error .= "<script>
 						window.onload = function() {
 							Swal.fire({
@@ -56,12 +57,15 @@
 					</script>";
 						}
 					}
+					//check there is an error or not
 					if($error!=""){
-					echo "$error";
+					echo $error;
 						}else{
+							//set exp date after 24h
 					$expFormat = mktime(date("H"), date("i"), date("s"), date("m")  , date("d")+1, date("Y"));
 					$expDate = date("Y-m-d H:i:s",$expFormat);
-					$key = md5(2418*2+$email);
+					//genarate a key
+					$key = md5(2418*2);
 					$addKey = substr(md5(uniqid(rand(),1)),3,10);
 					$key = $key . $addKey;
 				    $query = "INSERT INTO `password_reset_temp` (`email`, `key`, `expDate`)
@@ -72,7 +76,7 @@
 				$output='<p>Dear '.$user_name.',</p>';
 				$output.='<p>Please click on the following link to reset your password.</p>';
 				$output.='<p>-------------------------------------------------------------</p>';
-				$output.='<p><a href="https://www.weuse.work/includes/reset-password.php?key='.$key.'&email='.$email.'&action=reset" target="_blank">https://www.weuse.work/includes/reset-password.php?key='.$key.'&email='.$email.'&action=reset</a></p>';		
+				$output.='<p><a href="https://www.seatstock.lk/includes/forgetpass.php?key='.$key.'&email='.$email.'&action=reset" target="_blank">https://www.weuse.work/includes/reset-password.php?key='.$key.'&email='.$email.'&action=reset</a></p>';		
 				$output.='<p>-------------------------------------------------------------</p>';
 				$output.='<p>Please be sure to copy the entire link into your browser.
 				The link will expire after 1 day for security reasons.</p>';
@@ -82,10 +86,10 @@
 				$output.='<p>Thanks,</p>';
 				$output.='<p>Weuse Team</p>';
 				$body = $output; 
-				$subject = "Password Recovery - weuse.com";
+				$subject = "Password Recovery - Seatstock.lk";
 				
 				$email_to = $email;
-				$fromserver = "noreply@yourwebsite.com"; 
+				$fromserver = "noreply@seatstock.lk"; 
 				require("../phpmailer/PHPMailerAutoload.php");
 				$mail = new PHPMailer();
 				$mail->IsSMTP();
@@ -95,8 +99,8 @@
 				$mail->Password = "lebdkufvlhhmlvvv"; //Enter your passwrod here
 				$mail->Port = 587;
 				$mail->IsHTML(true);
-				$mail->From = "noreply@yourwebsite.com";
-				$mail->FromName = "Weuse";
+				$mail->From = "noreply@seatstock.lk";
+				$mail->FromName = "Seatstock";
 				$mail->Sender = $fromserver; // indicates ReturnPath header
 				$mail->Subject = $subject;
 				$mail->Body = $body;
@@ -104,6 +108,7 @@
 				if(!$mail->Send()){
 				echo "Mailer Error: " . $mail->ErrorInfo;
 				}else{
+					//if mail sent message
 				echo "<script>
 				window.onload = function() {
 					Swal.fire({
@@ -125,10 +130,10 @@
 					
 				}else{
 				?>
-				    <form method="post" action="" name="reset" class="mb-5">
-						<p class="mx-auto d-block">Enter Your Email Address</p>
-				        <input type="email" name="email" placeholder="username@email.com" id="forminput" class="col-12  m-2 mx-auto d-block form-control"/>
-				        <input class="btn mx-auto d-block" id="button" type="submit" value="⟳ RESET PASSWORD" />
+				    <form method="post" action="" name="reset">
+						<p>Enter Your Email Address</p>
+				        <input type="email" name="email" placeholder="username@email.com" id="forminput"/>
+				        <input id="button" type="submit" value="⟳ RESET PASSWORD" />
 				    </form>
 				    <?php } ?>
             </div>
